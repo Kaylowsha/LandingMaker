@@ -107,8 +107,12 @@ h1, h2, h3, h4 {
 #navbar.scrolled {
     background: rgba(10, 11, 16, 0.8);
     backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--glass-border);
+}
+
+#navbar.scrolled .logo-img {
+    height: 60px;
 }
 
 #navbar .container {
@@ -124,24 +128,15 @@ h1, h2, h3, h4 {
 }
 
 .logo-img {
-    height: 45px;
+    height: 80px;
     width: auto;
     filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
+    transition: var(--transition);
 }
 
 .logo-img-small {
-    height: 35px;
+    height: 60px;
     width: auto;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.logo .accent {
-    color: var(--primary);
 }
 
 .nav-links {
