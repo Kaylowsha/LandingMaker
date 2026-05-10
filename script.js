@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Auto-update copyright year (SEO: keeps content fresh)
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -14,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     mobileMenu.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        const isOpen = navLinks.style.display === 'flex';
+        navLinks.style.display = isOpen ? 'none' : 'flex';
         navLinks.style.flexDirection = 'column';
         navLinks.style.position = 'absolute';
         navLinks.style.top = '100%';
@@ -23,24 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.style.background = 'rgba(10, 11, 16, 0.95)';
         navLinks.style.padding = '2rem';
         navLinks.style.borderBottom = '1px solid var(--glass-border)';
+        mobileMenu.setAttribute('aria-expanded', String(!isOpen));
     });
 
-    // FAQ Accordion
+    // FAQ Accordion (with ARIA + keyboard support)
     const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-            });
-
-            // Toggle current item
-            if (!isActive) {
-                item.classList.add('active');
-            }
+    const toggleFaq = (item) => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+            const q = otherItem.querySelector('.faq-question');
+            if (q) q.setAttribute('aria-expanded', 'false');
         });
+        if (!isActive) {
+            item.classList.add('active');
+            const q = item.querySelector('.faq-question');
+            if (q) q.setAttribute('aria-expanded', 'true');
+        }
+    };
+
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => toggleFaq(item));
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFaq(item);
+                }
+            });
+        }
     });
 
     // Smooth Scroll for links
