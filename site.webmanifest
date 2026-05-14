@@ -1,0 +1,24 @@
+{
+    "name": "Austral Prints 3D - Diseño Web en Chile",
+    "short_name": "Austral Prints 3D",
+    "description": "Diseño de landing pages profesionales y PWAs en Chile. Sitios rápidos y optimizados para SEO con IA.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0b10",
+    "theme_color": "#0a0b10",
+    "lang": "es-CL",
+    "icons": [
+        {
+            "src": "assets/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
