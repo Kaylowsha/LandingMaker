@@ -107,6 +107,50 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Count-up animation for stats
+    const animateCount = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const duration = 1500;
+        const start = performance.now();
+        const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = target * eased;
+            el.textContent = `${prefix}${target % 1 === 0 ? Math.floor(value) : value.toFixed(1)}${suffix}`;
+            if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    };
+
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-num').forEach(el => statObserver.observe(el));
+
+    // 3D Tilt effect on portfolio cards (skip if reduced motion)
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion && window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('.portfolio-item').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) - 0.5;
+                const y = ((e.clientY - rect.top) / rect.height) - 0.5;
+                card.style.transform = `perspective(1000px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-5px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+    }
+
     // Modal Gallery Logic (with focus trap, ESC, arrow keys, dot a11y)
     const modal = document.getElementById('gallery-modal');
     const modalImg = document.getElementById('modal-img');
