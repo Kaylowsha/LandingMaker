@@ -1137,9 +1137,42 @@ button.portfolio-item {
     -webkit-text-fill-color: var(--text-muted);
 }
 
+/* Pricing note */
+.pricing-note {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-note i {
+    color: var(--primary);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .pricing-note {
+        border-radius: 16px;
+        text-align: left;
+        align-items: flex-start;
+    }
+}
+
 /* Guarantees */
 .guarantees {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
