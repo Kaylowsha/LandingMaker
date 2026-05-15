@@ -1656,6 +1656,7 @@ footer {
     }
     .nav-links.open { display: flex; }
     .menu-toggle { display: block; }
+    .nav-cta { display: none; }
     .pricing-card.featured { transform: scale(1); }
     .pricing-card.featured:hover { transform: translateY(-5px); }
 }
