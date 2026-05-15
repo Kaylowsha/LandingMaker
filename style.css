@@ -1641,6 +1641,10 @@ footer {
 /* Responsive */
 @media (max-width: 992px) {
     .hero h1 { font-size: 3.5rem; }
+    #navbar .container {
+        justify-content: center;
+        position: relative;
+    }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -1655,7 +1659,13 @@ footer {
         gap: 1.5rem;
     }
     .nav-links.open { display: flex; }
-    .menu-toggle { display: block; }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .nav-cta { display: none; }
     .pricing-card.featured { transform: scale(1); }
     .pricing-card.featured:hover { transform: translateY(-5px); }
