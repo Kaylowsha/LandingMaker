@@ -21,6 +21,7 @@
     <meta property="og:description" content="Landing pages profesionales que generan clientes reales. Diseño moderno con IA, dominio y hosting incluidos.">
     <meta property="og:url" content="https://australprints3d.cl/">
     <meta property="og:image" content="https://australprints3d.cl/assets/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Austral Prints 3D - Diseño Web y Landing Pages en Chile">
@@ -37,13 +38,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
+
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome (non-blocking) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -160,7 +167,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="#inicio" aria-label="Austral Prints 3D - Inicio">
-                        <img src="assets/logo.png" alt="Logo Austral Prints 3D - Diseño Web y Landing Pages en Chile" class="logo-img" width="180" height="180">
+                        <img src="assets/logo.png" alt="Logo Austral Prints 3D - Diseño Web y Landing Pages en Chile" class="logo-img" width="180" height="180" fetchpriority="high" decoding="async">
                     </a>
                 </div>
                 <ul class="nav-links">
@@ -168,6 +175,7 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#precios">Precios</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
                 <a href="https://wa.me/56922050705" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
@@ -189,9 +197,16 @@
                 <h1 class="fade-in">Landing Pages <span class="gradient-text">Profesionales</span> en Chile</h1>
                 <p class="lead fade-in delay-1">Diseño web moderno potenciado con IA. Creamos landings rápidas y optimizadas para SEO que no solo se ven bien, sino que generan clientes reales en todo Chile.</p>
                 <div class="hero-btns fade-in delay-2">
-                    <a href="#precios" class="btn btn-primary btn-lg">Ver Paquetes</a>
-                    <a href="#proyectos" class="btn btn-outline btn-lg">Nuestros Trabajos</a>
+                    <a href="https://wa.me/56922050705?text=Hola!%20Quiero%20cotizar%20mi%20landing%20page" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" aria-label="Cotizar por WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
+                    </a>
+                    <a href="#proyectos" class="btn btn-outline btn-lg">Ver Proyectos</a>
                 </div>
+                <ul class="hero-proof fade-in delay-2" aria-label="Garantías del servicio">
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Entrega 5–7 días</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Dominio + hosting incluidos</li>
+                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> 100% tuya, sin amarras</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -238,7 +253,7 @@
             <div class="portfolio-grid">
                 <!-- Inventiva Música (Landing) -->
                 <a href="https://www.inventivamusica.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Inventiva Música - Escuela de Música">
-                    <img src="assets/portfolio-1.jpg" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/portfolio-1.jpg" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -250,7 +265,7 @@
 
                 <!-- Eco Clima (Landing) -->
                 <a href="https://eco-clima-app.vercel.app/landing" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Eco Clima - Servicios de Climatización">
-                    <img src="assets/portfolio-3.jpg" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/portfolio-3.jpg" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -262,7 +277,7 @@
 
                 <!-- Barber Flow (Landing) -->
                 <a href="https://barberflowaustral.com/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Barber Flow - Landing Page para Barberías">
-                    <img src="assets/portfolio-5.jpg" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/portfolio-5.jpg" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -274,7 +289,7 @@
 
                 <!-- MultiBoost Lite (Landing) -->
                 <a href="https://www.multiboostlite.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de MultiBoost Lite - Plataforma Educativa de Matemáticas">
-                    <img src="assets/portfolio-2.jpg" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/portfolio-2.jpg" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -286,7 +301,7 @@
 
                 <!-- Barber Flow (PWA) -->
                 <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/barber 1.jpg,assets/pwa/barber 2.jpg,assets/pwa/barber 3.jpg,assets/pwa/barber 4.jpg,assets/pwa/barber 5.jpg" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
-                    <img src="assets/pwa/barber 1.jpg" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/pwa/barber 1.jpg" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA de Gestión</div>
                     <div class="portfolio-info">
@@ -298,7 +313,7 @@
 
                 <!-- Tienda Amapolas (PWA) -->
                 <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/Amapolas 1.jpg,assets/pwa/Amapolas 2.jpg,assets/pwa/Amapolas 3.jpg" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
-                    <img src="assets/pwa/Amapolas 1.jpg" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/pwa/Amapolas 1.jpg" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA de Gestión</div>
                     <div class="portfolio-info">
@@ -310,7 +325,7 @@
 
                 <!-- Multiboost Lite (Estudiante) (PWA) -->
                 <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/multie.jpg,assets/pwa/mbe1.jpg,assets/pwa/mbe2.jpg,assets/pwa/mbe3.jpg,assets/pwa/mbe4.jpg" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
-                    <img src="assets/pwa/multie.jpg" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/pwa/multie.jpg" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Estudiante</div>
                     <div class="portfolio-info">
@@ -322,7 +337,7 @@
 
                 <!-- Multiboost Lite (Tutor) (PWA) -->
                 <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/multit.jpg,assets/pwa/mbt1.jpg,assets/pwa/mbt2.jpg,assets/pwa/mbt3.jpg,assets/pwa/mbt4.jpg" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
-                    <img src="assets/pwa/multit.jpg" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" width="600" height="400">
+                    <img src="assets/pwa/multit.jpg" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Tutor</div>
                     <div class="portfolio-info">
@@ -433,6 +448,66 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen <span class="gradient-text">nuestros clientes</span></h2>
+                <p>Negocios reales en Chile que confiaron en nosotros.</p>
+            </div>
+            <div class="testimonials-grid">
+                <figure class="testimonial glass">
+                    <div class="testimonial-stars" aria-label="5 de 5 estrellas">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+                    <blockquote>
+                        <p>“Atención impecable y la landing quedó muy profesional. Empecé a recibir consultas la primera semana.”</p>
+                    </blockquote>
+                    <figcaption>
+                        <strong>Inventiva Música</strong>
+                        <span>Escuela de Música</span>
+                    </figcaption>
+                </figure>
+                <figure class="testimonial glass">
+                    <div class="testimonial-stars" aria-label="5 de 5 estrellas">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+                    <blockquote>
+                        <p>“La PWA nos cambió la forma de trabajar: stock, ventas y boletas por WhatsApp en un solo lugar.”</p>
+                    </blockquote>
+                    <figcaption>
+                        <strong>Tienda Amapolas</strong>
+                        <span>Boutique</span>
+                    </figcaption>
+                </figure>
+                <figure class="testimonial glass">
+                    <div class="testimonial-stars" aria-label="5 de 5 estrellas">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+                    <blockquote>
+                        <p>“Rápidos, transparentes con los costos y siempre dispuestos a ajustar detalles. 100% recomendados.”</p>
+                    </blockquote>
+                    <figcaption>
+                        <strong>Eco Clima</strong>
+                        <span>Servicios de Climatización</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
@@ -468,7 +543,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo">
-                        <img src="assets/logo.png" alt="Logo Austral Prints 3D" class="logo-img-small" width="120" height="120" loading="lazy">
+                        <img src="assets/logo.png" alt="Logo Austral Prints 3D" class="logo-img-small" width="120" height="120" loading="lazy" decoding="async">
                     </div>
                     <p>Diseño web moderno con Inteligencia Artificial en Chile.</p>
                 </div>
@@ -490,17 +565,17 @@
     </a>
 
     <!-- Modal Gallery -->
-    <div id="gallery-modal" class="modal">
-        <span class="modal-close">&times;</span>
+    <div id="gallery-modal" class="modal" role="dialog" aria-modal="true" aria-label="Galería de imágenes" aria-hidden="true">
+        <button type="button" class="modal-close" aria-label="Cerrar galería">&times;</button>
         <div class="modal-content">
             <div class="gallery-container">
-                <img id="modal-img" src="" alt="Gallery Image">
+                <img id="modal-img" src="" alt="">
                 <div class="gallery-nav">
-                    <button id="prev-img"><i class="fas fa-chevron-left"></i></button>
-                    <button id="next-img"><i class="fas fa-chevron-right"></i></button>
+                    <button id="prev-img" type="button" aria-label="Imagen anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <button id="next-img" type="button" aria-label="Imagen siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="gallery-dots"></div>
+            <div class="gallery-dots" role="tablist" aria-label="Seleccionar imagen"></div>
         </div>
     </div>
 
