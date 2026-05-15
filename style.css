@@ -209,11 +209,12 @@ h1, h2, h3, h4 {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 80px;
+    padding-top: 230px;
+    padding-bottom: 60px;
 }
 
 .hero-background {
