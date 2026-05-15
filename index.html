@@ -161,6 +161,9 @@
     </script>
 </head>
 <body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scroll-progress-bar"></div></div>
+
     <!-- Navigation -->
     <header>
         <nav id="navbar" aria-label="Navegación principal">
@@ -194,20 +197,25 @@
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">Landing Pages <span class="gradient-text">Profesionales</span> en Chile</h1>
-                <p class="lead fade-in delay-1">Diseño web moderno potenciado con IA. Creamos landings rápidas y optimizadas para SEO que no solo se ven bien, sino que generan clientes reales en todo Chile.</p>
-                <div class="hero-btns fade-in delay-2">
+                <span class="hero-eyebrow fade-in"><span class="eyebrow-dot"></span> Diseño Web · Chile · 2026</span>
+                <h1 class="fade-in delay-1">Landing Pages <span class="gradient-text">que venden</span>, no solo se ven bien.</h1>
+                <p class="lead fade-in delay-2">Diseño moderno potenciado con IA, optimizado para SEO y velocidad. Sitios que convierten visitas en clientes reales en todo Chile.</p>
+                <div class="hero-btns fade-in delay-3">
                     <a href="https://wa.me/56922050705?text=Hola!%20Quiero%20cotizar%20mi%20landing%20page" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" aria-label="Cotizar por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                     <a href="#proyectos" class="btn btn-outline btn-lg">Ver Proyectos</a>
                 </div>
-                <ul class="hero-proof fade-in delay-2" aria-label="Garantías del servicio">
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Entrega 5–7 días</li>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Dominio + hosting incluidos</li>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> 100% tuya, sin amarras</li>
+                <ul class="hero-proof fade-in delay-3" aria-label="Garantías del servicio">
+                    <li><i class="fas fa-bolt" aria-hidden="true"></i> Entrega 5–7 días</li>
+                    <li><i class="fas fa-globe" aria-hidden="true"></i> Dominio + hosting incluidos</li>
+                    <li><i class="fas fa-shield-halved" aria-hidden="true"></i> 100% tuya, sin amarras</li>
                 </ul>
             </div>
+            <a href="#servicios" class="hero-scroll" aria-label="Ir a la siguiente sección">
+                <span class="hero-scroll-line"></span>
+                <span class="hero-scroll-text">Scroll</span>
+            </a>
         </div>
     </section>
 
@@ -220,21 +228,25 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card glass">
+                    <span class="feature-num">01</span>
                     <i class="fas fa-mobile-alt"></i>
                     <h3>100% Responsive</h3>
                     <p>Tu página se verá perfecta en cualquier dispositivo, especialmente en móviles.</p>
                 </div>
                 <div class="feature-card glass">
+                    <span class="feature-num">02</span>
                     <i class="fas fa-rocket"></i>
                     <h3>Velocidad Ultra</h3>
                     <p>Optimizamos cada línea de código para que tu sitio cargue en menos de 2 segundos.</p>
                 </div>
                 <div class="feature-card glass">
+                    <span class="feature-num">03</span>
                     <i class="fas fa-search"></i>
                     <h3>SEO Integrado</h3>
                     <p>Estructura optimizada para que Google encuentre tu negocio fácilmente.</p>
                 </div>
                 <div class="feature-card glass">
+                    <span class="feature-num">04</span>
                     <i class="fas fa-magic"></i>
                     <h3>Diseño con IA</h3>
                     <p>Utilizamos las últimas herramientas de IA para crear diseños únicos y vanguardistas.</p>
@@ -362,7 +374,7 @@
                 <div class="pricing-card glass">
                     <div class="card-header">
                         <h3>Landing Estándar</h3>
-                        <div class="price">$200.000</div>
+                        <div class="price">$200.000<span class="price-suffix">CLP · Pago único</span></div>
                     </div>
                     <ul class="card-features">
                         <li><i class="fas fa-check"></i> Diseño Moderno y Responsive</li>
@@ -378,7 +390,7 @@
                 <div class="pricing-card glass">
                     <div class="card-header">
                         <h3>PWA de Gestión</h3>
-                        <div class="price">$200.000</div>
+                        <div class="price">$200.000<span class="price-suffix">CLP · Pago único</span></div>
                     </div>
                     <ul class="card-features">
                         <li><i class="fas fa-mobile-alt"></i> <strong>Instalable en celular</strong> (Sin tiendas)</li>
@@ -531,6 +543,26 @@
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a4">¿Qué necesito para empezar? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
                     <div class="faq-answer" id="faq-a4">Textos o ideas de contenido, fotos de tu negocio, información de contacto y tus palabras clave objetivo.</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" aria-label="Llamado a la acción">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-glow"></div>
+                <h2>¿Listo para tu <span class="gradient-text">próxima landing</span>?</h2>
+                <p>Cuéntame tu idea por WhatsApp. Te respondo en menos de 24h con una propuesta clara y sin compromiso.</p>
+                <div class="cta-actions">
+                    <a href="https://wa.me/56922050705?text=Hola!%20Quiero%20cotizar%20mi%20landing" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar ahora
+                    </a>
+                    <a href="mailto:australprints3d@gmail.com" class="btn btn-outline btn-lg">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Escribir email
+                    </a>
+                </div>
+                <p class="cta-small">Respuesta promedio: menos de 24 horas · Atención de lunes a sábado</p>
             </div>
         </div>
     </section>

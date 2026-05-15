@@ -3,15 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Navbar Scroll Effect
+    // Navbar Scroll Effect + Scroll Progress Bar
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+    const progressBar = document.getElementById('scroll-progress-bar');
+
+    const updateScroll = () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
+        if (progressBar) {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+            progressBar.style.width = `${percent}%`;
+        }
+    };
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll();
 
     // Mobile Menu Toggle (uses CSS class instead of inline styles)
     const mobileMenu = document.getElementById('mobile-menu');
