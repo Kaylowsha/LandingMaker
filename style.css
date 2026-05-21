@@ -1143,10 +1143,9 @@ button.portfolio-item {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
-    display: grid;
-    grid-template-columns: 24px 1fr;
+    display: flex;
+    align-items: flex-start;
     gap: 1rem;
-    align-items: start;
     padding: 1.2rem 2rem;
     background: rgba(255, 255, 255, 0.03);
     border-left: 3px solid var(--primary);
@@ -1159,8 +1158,8 @@ button.portfolio-item {
 .pricing-note i {
     color: var(--primary);
     font-size: 1.1rem;
+    flex-shrink: 0;
     margin-top: 3px;
-    text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -1222,17 +1221,15 @@ button.portfolio-item {
 
 .card-features li {
     margin-bottom: 1rem;
-    display: grid;
-    grid-template-columns: 20px 1fr;
+    display: flex;
+    align-items: center;
     gap: 0.75rem;
-    align-items: start;
     line-height: 1.5;
 }
 
 .card-features i {
     color: var(--primary);
-    margin-top: 3px;
-    text-align: center;
+    flex-shrink: 0;
 }
 
 /* Compare Plans Table */
