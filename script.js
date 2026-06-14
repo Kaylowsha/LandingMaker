@@ -44,6 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== mobileMenu) {
+                closeMobileMenu();
+            }
+        });
     }
 
     // FAQ Accordion (with ARIA + keyboard support)
