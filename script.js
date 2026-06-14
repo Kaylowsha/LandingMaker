@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== mobileMenu) {
+            if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
                 closeMobileMenu();
             }
         });
