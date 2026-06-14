@@ -1887,6 +1887,103 @@ button:focus-visible,
     cursor: pointer;
 }
 
+/* Portfolio Filter */
+.portfolio-filter {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-muted);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+}
+
+.portfolio-item.hidden {
+    display: none;
+}
+
+.portfolio-grid.filtered .portfolio-item {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+}
+
+/* Testimonials carousel on mobile */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .testimonials-grid::-webkit-scrollbar { display: none; }
+    .testimonial {
+        min-width: 82vw;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+    }
+}
+
+/* Mobile CTA Bar */
+.mobile-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.85rem 1.5rem;
+    background: rgba(10, 11, 16, 0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--glass-border);
+    z-index: 997;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-cta-bar.visible {
+    transform: translateY(0);
+}
+
+.mobile-cta-bar .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+@media (max-width: 768px) {
+    .mobile-cta-bar { display: flex; }
+
+    /* Raise WhatsApp float and back-to-top above the bar */
+    .whatsapp-float { bottom: 90px; }
+    .back-to-top { bottom: 160px; }
+}
+
 /* Hero slideshow image transition */
 .browser-content img {
     transition: opacity 0.4s ease;

@@ -147,6 +147,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.stat-num').forEach(el => statObserver.observe(el));
 
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item[data-category]');
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (filter === 'all') {
+                portfolioGrid.classList.remove('filtered');
+                portfolioItems.forEach(item => item.classList.remove('hidden'));
+            } else {
+                portfolioGrid.classList.add('filtered');
+                portfolioItems.forEach(item => {
+                    item.classList.toggle('hidden', item.dataset.category !== filter);
+                });
+            }
+        });
+    });
+
+    // Mobile CTA bar
+    const mobileCta = document.getElementById('mobile-cta-bar');
+    const heroSection = document.getElementById('inicio');
+    if (mobileCta && heroSection) {
+        window.addEventListener('scroll', () => {
+            mobileCta.classList.toggle('visible', heroSection.getBoundingClientRect().bottom < 0);
+        }, { passive: true });
+    }
+
     // Hero slideshow
     const heroSlideshow = document.getElementById('hero-slideshow');
     if (heroSlideshow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

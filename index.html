@@ -376,9 +376,14 @@
                 <h2>Casos de <span class="gradient-text">Éxito</span></h2>
                 <p>Algunos de nuestros últimos proyectos realizados.</p>
             </div>
+            <div class="portfolio-filter" role="group" aria-label="Filtrar proyectos">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="landing">Landing Page</button>
+                <button class="filter-btn" data-filter="pwa">PWA</button>
+            </div>
             <div class="portfolio-grid">
                 <!-- Inventiva Música (Landing) -->
-                <a href="https://www.inventivamusica.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Inventiva Música - Escuela de Música">
+                <a href="https://www.inventivamusica.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Inventiva Música - Escuela de Música">
                     <img src="assets/portfolio-1.jpg" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
@@ -390,7 +395,7 @@
                 </a>
 
                 <!-- Eco Clima (Landing) -->
-                <a href="https://eco-clima-app.vercel.app/landing" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Eco Clima - Servicios de Climatización">
+                <a href="https://eco-clima-app.vercel.app/landing" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Eco Clima - Servicios de Climatización">
                     <img src="assets/portfolio-3.jpg" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
@@ -402,7 +407,7 @@
                 </a>
 
                 <!-- Barber Flow (Landing) -->
-                <a href="https://barberflowaustral.com/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Barber Flow - Landing Page para Barberías">
+                <a href="https://barberflowaustral.com/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Barber Flow - Landing Page para Barberías">
                     <img src="assets/portfolio-5.jpg" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
@@ -414,7 +419,7 @@
                 </a>
 
                 <!-- MultiBoost Lite (Landing) -->
-                <a href="https://www.multiboostlite.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de MultiBoost Lite - Plataforma Educativa de Matemáticas">
+                <a href="https://www.multiboostlite.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de MultiBoost Lite - Plataforma Educativa de Matemáticas">
                     <img src="assets/portfolio-2.jpg" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
@@ -426,7 +431,7 @@
                 </a>
 
                 <!-- Barber Flow (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/barber 1.jpg,assets/pwa/barber 2.jpg,assets/pwa/barber 3.jpg,assets/pwa/barber 4.jpg,assets/pwa/barber 5.jpg" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/barber 1.jpg,assets/pwa/barber 2.jpg,assets/pwa/barber 3.jpg,assets/pwa/barber 4.jpg,assets/pwa/barber 5.jpg" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
                     <img src="assets/pwa/barber 1.jpg" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA de Gestión</div>
@@ -438,7 +443,7 @@
                 </button>
 
                 <!-- Tienda Amapolas (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/Amapolas 1.jpg,assets/pwa/Amapolas 2.jpg,assets/pwa/Amapolas 3.jpg" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/Amapolas 1.jpg,assets/pwa/Amapolas 2.jpg,assets/pwa/Amapolas 3.jpg" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
                     <img src="assets/pwa/Amapolas 1.jpg" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA de Gestión</div>
@@ -450,7 +455,7 @@
                 </button>
 
                 <!-- Multiboost Lite (Estudiante) (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/multie.jpg,assets/pwa/mbe2.jpg,assets/pwa/mbe3.jpg,assets/pwa/mbe4.jpg" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multie.jpg,assets/pwa/mbe2.jpg,assets/pwa/mbe3.jpg,assets/pwa/mbe4.jpg" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
                     <img src="assets/pwa/multie.jpg" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Estudiante</div>
@@ -462,7 +467,7 @@
                 </button>
 
                 <!-- Multiboost Lite (Tutor) (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/multit.jpg,assets/pwa/mbt1.jpg,assets/pwa/mbt2.jpg,assets/pwa/mbt3.jpg,assets/pwa/mbt4.jpg" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multit.jpg,assets/pwa/mbt1.jpg,assets/pwa/mbt2.jpg,assets/pwa/mbt3.jpg,assets/pwa/mbt4.jpg" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
                     <img src="assets/pwa/multit.jpg" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Tutor</div>
@@ -957,6 +962,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile CTA Bar -->
+    <div class="mobile-cta-bar" id="mobile-cta-bar">
+        <a href="https://wa.me/56922050705?text=Hola!%20Quiero%20cotizar%20mi%20landing" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar ahora
+        </a>
+    </div>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio">
