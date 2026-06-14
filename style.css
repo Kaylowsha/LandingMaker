@@ -1235,6 +1235,10 @@ button.portfolio-item {
 }
 
 /* Compare Plans Table */
+.compare-scroll-hint {
+    display: none;
+}
+
 .compare-wrapper {
     overflow-x: auto;
     border-radius: 20px;
@@ -1248,6 +1252,47 @@ button.portfolio-item {
     border-collapse: collapse;
     min-width: 720px;
     text-align: center;
+}
+
+@media (max-width: 640px) {
+    .compare-table {
+        min-width: unset;
+        table-layout: fixed;
+    }
+
+    .compare-table thead th:first-child,
+    .compare-table tbody th {
+        width: 36%;
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    .compare-table thead th {
+        padding: 0.9rem 0.3rem;
+        font-size: 0.78rem;
+    }
+
+    .compare-table tbody th {
+        padding: 0.65rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .compare-table tbody td {
+        padding: 0.65rem 0.25rem;
+        font-size: 0.8rem;
+    }
+
+    .compare-table .row-price th,
+    .compare-table .row-price td {
+        font-size: 0.88rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .best-tag {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
 }
 
 .compare-table thead th {
