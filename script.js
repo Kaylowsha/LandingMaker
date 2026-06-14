@@ -1,3 +1,10 @@
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Auto-update copyright year (SEO: keeps content fresh)
     const yearEl = document.getElementById('current-year');
@@ -23,6 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateScroll, { passive: true });
     updateScroll();
+
+    // Back to top button
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // Mobile Menu Toggle (uses CSS class instead of inline styles)
     const mobileMenu = document.getElementById('mobile-menu');
@@ -128,6 +146,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
 
     document.querySelectorAll('.stat-num').forEach(el => statObserver.observe(el));
+
+    // Hero slideshow
+    const heroSlideshow = document.getElementById('hero-slideshow');
+    if (heroSlideshow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const images = heroSlideshow.dataset.images.split(',');
+        const heroImg = heroSlideshow.querySelector('img');
+        let heroIndex = 0;
+        setInterval(() => {
+            heroImg.style.opacity = '0';
+            setTimeout(() => {
+                heroIndex = (heroIndex + 1) % images.length;
+                heroImg.src = images[heroIndex];
+                heroImg.style.opacity = '1';
+            }, 400);
+        }, 3000);
+    }
+
+    // Contact form → WhatsApp
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('cf-nombre').value.trim();
+            const negocio = document.getElementById('cf-negocio').value.trim();
+            const mensaje = document.getElementById('cf-mensaje').value.trim();
+            if (!nombre || !negocio || !mensaje) return;
+            const text = `Hola! Te escribo desde tu sitio web.\n\n*Nombre:* ${nombre}\n*Negocio/Rubro:* ${negocio}\n*Mensaje:* ${mensaje}`;
+            window.open(`https://wa.me/56922050705?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    }
 
     // 3D Tilt effect on portfolio cards (skip if reduced motion)
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

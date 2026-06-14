@@ -207,6 +207,7 @@
                     <li><a href="#precios">Precios</a></li>
                     <li><a href="#proceso">Proceso</a></li>
                     <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 <a href="https://wa.me/56922050705" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Contactar
@@ -251,7 +252,7 @@
                             <span>tunegocio.cl</span>
                         </div>
                     </div>
-                    <div class="browser-content">
+                    <div class="browser-content" id="hero-slideshow" data-images="assets/portfolio-1.jpg,assets/portfolio-2.jpg,assets/portfolio-3.jpg,assets/portfolio-5.jpg">
                         <img src="assets/portfolio-1.jpg" alt="" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -817,6 +818,65 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Escríbeme <span class="gradient-text">directamente</span></h2>
+                <p>Te respondo en menos de 24 horas, sin compromiso.</p>
+            </div>
+            <div class="contact-wrapper">
+                <form class="contact-form glass" id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="cf-nombre">Tu nombre</label>
+                        <input type="text" id="cf-nombre" name="nombre" placeholder="Ej: María González" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-negocio">Tu negocio o rubro</label>
+                        <input type="text" id="cf-negocio" name="negocio" placeholder="Ej: Peluquería, tienda, clínica..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-mensaje">¿Qué necesitas?</label>
+                        <textarea id="cf-mensaje" name="mensaje" rows="4" placeholder="Cuéntame tu idea o qué tipo de sitio buscas..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg form-submit">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar por WhatsApp
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-info-item glass">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/56922050705" target="_blank" rel="noopener noreferrer">+56 9 2205 0705</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item glass">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:australprints3d@gmail.com">australprints3d@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item glass">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <strong>Horario de atención</strong>
+                            <span>Lunes a Sábado · Respuesta &lt; 24h</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item glass">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <strong>Ubicación</strong>
+                            <span>Chile · Servicio a todo el país</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="final-cta" aria-label="Llamado a la acción">
         <div class="container">
@@ -879,6 +939,7 @@
                         <li><a href="#proceso">Proceso</a></li>
                         <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#faq">Preguntas frecuentes</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
 
@@ -896,6 +957,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/56922050705" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
