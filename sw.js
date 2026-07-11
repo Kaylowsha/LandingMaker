@@ -1,4 +1,4 @@
-const CACHE = 'ap3d-v4';
+const CACHE = 'ap3d-v5';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -11,6 +11,10 @@ const PRECACHE = [
   '/assets/portfolio-3.webp',
   '/assets/portfolio-5.webp',
   '/assets/portfolio-6.webp',
+  '/assets/mobile-rata.webp',
+  '/assets/mobile-barber.webp',
+  '/assets/mobile-multiboost.webp',
+  '/assets/mobile-inventiva.webp',
   '/assets/og-image.jpg',
 ];
 
