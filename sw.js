@@ -1,4 +1,4 @@
-const CACHE = 'ap3d-v2';
+const CACHE = 'ap3d-v3';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -10,6 +10,7 @@ const PRECACHE = [
   '/assets/portfolio-2.jpg',
   '/assets/portfolio-3.jpg',
   '/assets/portfolio-5.jpg',
+  '/assets/portfolio-6.jpg',
   '/assets/og-image.jpg',
 ];
 
