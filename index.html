@@ -42,13 +42,11 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Preload critical assets -->
-    <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/hero-bg.webp" fetchpriority="high">
     <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
 
-    <!-- Google Fonts: Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Fuente Outfit self-hosteada (ver @font-face en style.css) -->
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/outfit-latin.woff2" crossorigin>
 
     <!-- Font Awesome (non-blocking) -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -252,8 +250,8 @@
                             <span>tunegocio.cl</span>
                         </div>
                     </div>
-                    <div class="browser-content" id="hero-slideshow" data-images="assets/portfolio-1.jpg,assets/portfolio-2.jpg,assets/portfolio-3.jpg,assets/portfolio-5.jpg,assets/portfolio-6.jpg">
-                        <img src="assets/portfolio-1.jpg" alt="" loading="lazy" decoding="async">
+                    <div class="browser-content" id="hero-slideshow" data-images="assets/portfolio-1.webp,assets/portfolio-2.webp,assets/portfolio-3.webp,assets/portfolio-5.webp,assets/portfolio-6.webp">
+                        <img src="assets/portfolio-1.webp" alt="" decoding="async" fetchpriority="high">
                     </div>
                 </div>
                 <div class="mockup-glow"></div>
@@ -388,7 +386,7 @@
             <div class="portfolio-grid">
                 <!-- Inventiva Música (Landing) -->
                 <a href="https://www.inventivamusica.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Inventiva Música - Escuela de Música">
-                    <img src="assets/portfolio-1.jpg" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="assets/portfolio-1.webp" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -400,7 +398,7 @@
 
                 <!-- Eco Clima (Landing) -->
                 <a href="https://eco-clima-app.vercel.app/landing" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Eco Clima - Servicios de Climatización">
-                    <img src="assets/portfolio-3.jpg" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="assets/portfolio-3.webp" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -412,7 +410,7 @@
 
                 <!-- Barber Flow (Landing) -->
                 <a href="https://barberflowaustral.com/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Barber Flow - Landing Page para Barberías">
-                    <img src="assets/portfolio-5.jpg" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="assets/portfolio-5.webp" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -424,7 +422,7 @@
 
                 <!-- MultiBoost Lite (Landing) -->
                 <a href="https://www.multiboostlite.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de MultiBoost Lite - Plataforma Educativa de Matemáticas">
-                    <img src="assets/portfolio-2.jpg" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="assets/portfolio-2.webp" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -436,7 +434,7 @@
 
                 <!-- La Rata Bluesera (Landing) -->
                 <a href="https://laratabluesera.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de La Rata Bluesera - Banda de Blues">
-                    <img src="assets/portfolio-6.jpg" alt="Diseño de sitio web para La Rata Bluesera, banda de blues de Valdivia" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="assets/portfolio-6.webp" alt="Diseño de sitio web para La Rata Bluesera, banda de blues de Valdivia" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -447,8 +445,8 @@
                 </a>
 
                 <!-- Barber Flow (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/barber 1.jpg,assets/pwa/barber 2.jpg,assets/pwa/barber 3.jpg,assets/pwa/barber 4.jpg,assets/pwa/barber 5.jpg" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
-                    <img src="assets/pwa/barber 1.jpg" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/barber 1.webp,assets/pwa/barber 2.webp,assets/pwa/barber 3.webp,assets/pwa/barber 4.webp,assets/pwa/barber 5.webp" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
+                    <img src="assets/pwa/barber 1.webp" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">App de Gestión</div>
                     <div class="portfolio-info">
@@ -459,8 +457,8 @@
                 </button>
 
                 <!-- Tienda Amapolas (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/Amapolas 1.jpg,assets/pwa/Amapolas 2.jpg,assets/pwa/Amapolas 3.jpg" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
-                    <img src="assets/pwa/Amapolas 1.jpg" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/Amapolas 1.webp,assets/pwa/Amapolas 2.webp,assets/pwa/Amapolas 3.webp" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
+                    <img src="assets/pwa/Amapolas 1.webp" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">App de Gestión</div>
                     <div class="portfolio-info">
@@ -471,8 +469,8 @@
                 </button>
 
                 <!-- Multiboost Lite (Estudiante) (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multie.jpg,assets/pwa/mbe2.jpg,assets/pwa/mbe3.jpg,assets/pwa/mbe4.jpg" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
-                    <img src="assets/pwa/multie.jpg" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multie.webp,assets/pwa/mbe2.webp,assets/pwa/mbe3.webp,assets/pwa/mbe4.webp" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
+                    <img src="assets/pwa/multie.webp" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Estudiante</div>
                     <div class="portfolio-info">
@@ -483,8 +481,8 @@
                 </button>
 
                 <!-- Multiboost Lite (Tutor) (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multit.jpg,assets/pwa/mbt1.jpg,assets/pwa/mbt2.jpg,assets/pwa/mbt3.jpg,assets/pwa/mbt4.jpg" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
-                    <img src="assets/pwa/multit.jpg" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multit.webp,assets/pwa/mbt1.webp,assets/pwa/mbt2.webp,assets/pwa/mbt3.webp,assets/pwa/mbt4.webp" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
+                    <img src="assets/pwa/multit.webp" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Tutor</div>
                     <div class="portfolio-info">

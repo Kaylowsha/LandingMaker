@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://australprints3d.cl/</loc>
-        <lastmod>2026-06-14</lastmod>
+        <lastmod>2026-07-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -15,20 +15,24 @@
             <image:title>Austral Prints 3D - Logo</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://australprints3d.cl/assets/portfolio-1.jpg</image:loc>
+            <image:loc>https://australprints3d.cl/assets/portfolio-1.webp</image:loc>
             <image:title>Landing page Inventiva Música - Escuela de Música en Chile</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://australprints3d.cl/assets/portfolio-2.jpg</image:loc>
+            <image:loc>https://australprints3d.cl/assets/portfolio-2.webp</image:loc>
             <image:title>Landing page MultiBoost Lite - Plataforma Educativa</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://australprints3d.cl/assets/portfolio-3.jpg</image:loc>
+            <image:loc>https://australprints3d.cl/assets/portfolio-3.webp</image:loc>
             <image:title>Landing page Eco Clima - Servicios de Climatización</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://australprints3d.cl/assets/portfolio-5.jpg</image:loc>
+            <image:loc>https://australprints3d.cl/assets/portfolio-5.webp</image:loc>
             <image:title>Landing page Barber Flow - Barbería en Chile</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://australprints3d.cl/assets/portfolio-6.webp</image:loc>
+            <image:title>Sitio web La Rata Bluesera - Banda de Blues de Valdivia</image:title>
         </image:image>
     </url>
 </urlset>

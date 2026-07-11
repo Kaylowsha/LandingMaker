@@ -5,12 +5,12 @@ const PRECACHE = [
   '/style.css',
   '/script.js',
   '/assets/logo.png',
-  '/assets/hero-bg.jpg',
-  '/assets/portfolio-1.jpg',
-  '/assets/portfolio-2.jpg',
-  '/assets/portfolio-3.jpg',
-  '/assets/portfolio-5.jpg',
-  '/assets/portfolio-6.jpg',
+  '/assets/hero-bg.webp',
+  '/assets/portfolio-1.webp',
+  '/assets/portfolio-2.webp',
+  '/assets/portfolio-3.webp',
+  '/assets/portfolio-5.webp',
+  '/assets/portfolio-6.webp',
   '/assets/og-image.jpg',
 ];
 
