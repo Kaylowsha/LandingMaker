@@ -471,8 +471,8 @@ h1, h2, h3, h4 {
 }
 
 .mockup-card-1 {
-    top: -2%;
-    left: -10%;
+    top: 15%;
+    left: -8%;
     animation-delay: 0s;
 }
 
@@ -2172,69 +2172,9 @@ button:focus-visible,
 }
 
 /* ============================================
-   Mejoras visuales: phone mockup, marquee,
-   portfolio hover premium, timeline de proceso
+   Mejoras visuales: marquee, portfolio hover
+   premium, timeline de proceso
    ============================================ */
-
-/* --- Phone mockup en el hero --- */
-.phone-mockup {
-    position: absolute;
-    bottom: -8%;
-    left: -13%;
-    width: 27%;
-    aspect-ratio: 9 / 19.5;
-    border-radius: 26px;
-    overflow: hidden;
-    background: #0d0f17;
-    border: 3px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-        0 30px 60px -15px rgba(0, 0, 0, 0.7),
-        0 0 45px -10px rgba(157, 80, 187, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-    z-index: 4;
-    transform: rotate(-5deg);
-    animation: floatCard 5s ease-in-out infinite;
-    animation-delay: 1.2s;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-mockup:hover .phone-mockup {
-    transform: rotate(-2deg) translateY(-4px);
-}
-
-.phone-notch {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 38%;
-    height: 13px;
-    background: #0d0f17;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    z-index: 2;
-}
-
-.phone-mockup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    transition: opacity 0.4s ease;
-}
-
-@media (max-width: 992px) {
-    .phone-mockup { left: -2%; bottom: -5%; }
-}
-
-@media (max-width: 600px) {
-    .phone-mockup { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .phone-mockup { animation: none; }
-}
 
 /* --- Marquee de clientes --- */
 .trusted-marquee {

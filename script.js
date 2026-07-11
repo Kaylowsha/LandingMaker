@@ -178,27 +178,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // Slideshows del hero (navegador y celular, desfasados)
-    const startSlideshow = (el, delay) => {
-        if (!el) return;
-        const images = el.dataset.images.split(',');
-        const img = el.querySelector('img');
-        let index = 0;
-        setTimeout(() => {
-            setInterval(() => {
-                img.style.opacity = '0';
-                setTimeout(() => {
-                    index = (index + 1) % images.length;
-                    img.src = images[index];
-                    img.style.opacity = '1';
-                }, 400);
-            }, 3000);
-        }, delay);
-    };
-
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        startSlideshow(document.getElementById('hero-slideshow'), 0);
-        startSlideshow(document.getElementById('phone-slideshow'), 1500);
+    // Hero slideshow
+    const heroSlideshow = document.getElementById('hero-slideshow');
+    if (heroSlideshow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const images = heroSlideshow.dataset.images.split(',');
+        const heroImg = heroSlideshow.querySelector('img');
+        let heroIndex = 0;
+        setInterval(() => {
+            heroImg.style.opacity = '0';
+            setTimeout(() => {
+                heroIndex = (heroIndex + 1) % images.length;
+                heroImg.src = images[heroIndex];
+                heroImg.style.opacity = '1';
+            }, 400);
+        }, 3000);
     }
 
     // Timeline del proceso: se dibuja al entrar en viewport
