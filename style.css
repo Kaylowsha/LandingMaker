@@ -1,20 +1,7 @@
-/* Outfit (variable 300-800), self-hosted — sin dependencia de Google Fonts */
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300 800;
-    font-display: swap;
-    src: url('assets/fonts/outfit-latin.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300 800;
-    font-display: swap;
-    src: url('assets/fonts/outfit-latin-ext.woff2') format('woff2');
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+/* ============================================
+   AUSTRAL PRINTS 3D - STYLE.CSS
+   Con efecto de partículas conectadas en el hero
+   ============================================ */
 
 :root {
     --bg-dark: #0a0b10;
@@ -186,7 +173,7 @@ h1, h2, h3, h4 {
 }
 
 #navbar.scrolled .logo-img {
-    height: 50px;
+    height: 100px;
 }
 
 #navbar .container {
@@ -202,14 +189,14 @@ h1, h2, h3, h4 {
 }
 
 .logo-img {
-    height: 70px;
+    height: 180px;
     width: auto;
     filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
     transition: var(--transition);
 }
 
 .logo-img-small {
-    height: 70px;
+    height: 120px;
     width: auto;
 }
 
@@ -281,24 +268,39 @@ h1, h2, h3, h4 {
     border-radius: 4px;
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION - CON PARTÍCULAS
+   ============================================ */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 120px;
+    padding-top: 230px;
     padding-bottom: 60px;
+    overflow: hidden;
 }
 
+/* Canvas de partículas - capa más baja */
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+/* Background image - ahora más sutil, detrás del canvas */
 .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/hero-bg.webp') center/cover no-repeat;
-    opacity: 0.25;
+    background: url('assets/hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.08;
     z-index: 0;
     mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
@@ -312,6 +314,7 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 200px;
     background: linear-gradient(to top, var(--bg-dark), transparent);
+    z-index: 1;
 }
 
 .hero-container {
@@ -319,6 +322,8 @@ h1, h2, h3, h4 {
     grid-template-columns: 1.1fr 1fr;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 @media (max-width: 992px) {
@@ -730,9 +735,7 @@ h1, h2, h3, h4 {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 2.5rem;
-    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 
 .glass:hover {
@@ -1253,10 +1256,6 @@ button.portfolio-item {
 }
 
 /* Compare Plans Table */
-.compare-scroll-hint {
-    display: none;
-}
-
 .compare-wrapper {
     overflow-x: auto;
     border-radius: 20px;
@@ -1270,47 +1269,6 @@ button.portfolio-item {
     border-collapse: collapse;
     min-width: 720px;
     text-align: center;
-}
-
-@media (max-width: 640px) {
-    .compare-table {
-        min-width: unset;
-        table-layout: fixed;
-    }
-
-    .compare-table thead th:first-child,
-    .compare-table tbody th {
-        width: 36%;
-        word-break: break-word;
-        hyphens: auto;
-    }
-
-    .compare-table thead th {
-        padding: 0.9rem 0.3rem;
-        font-size: 0.78rem;
-    }
-
-    .compare-table tbody th {
-        padding: 0.65rem 0.5rem;
-        font-size: 0.75rem;
-    }
-
-    .compare-table tbody td {
-        padding: 0.65rem 0.25rem;
-        font-size: 0.8rem;
-    }
-
-    .compare-table .row-price th,
-    .compare-table .row-price td {
-        font-size: 0.88rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .best-tag {
-        font-size: 0.55rem;
-        letter-spacing: 1px;
-    }
 }
 
 .compare-table thead th {
@@ -1458,7 +1416,7 @@ button.portfolio-item {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 400px;
+    max-height: 200px;
     margin-top: 1rem;
 }
 
@@ -1878,7 +1836,6 @@ button:focus-visible,
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
-
 .gallery-dots {
     display: flex;
     gap: 10px;
@@ -1904,408 +1861,3 @@ button:focus-visible,
 .pwa-card {
     cursor: pointer;
 }
-
-/* Portfolio Filter */
-.portfolio-filter {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text-muted);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: border-color 0.3s, background 0.3s, color 0.3s;
-}
-
-.filter-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-.filter-btn.active {
-    background: var(--gradient);
-    border-color: transparent;
-    color: white;
-}
-
-.portfolio-item.hidden {
-    display: none;
-}
-
-.portfolio-grid.filtered .portfolio-item {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-}
-
-/* Testimonials carousel on mobile */
-@media (max-width: 768px) {
-    .testimonials-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 1.5rem;
-        padding-bottom: 1.5rem;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    .testimonials-grid::-webkit-scrollbar { display: none; }
-    .testimonial {
-        min-width: 82vw;
-        scroll-snap-align: center;
-        flex-shrink: 0;
-    }
-}
-
-/* Mobile CTA Bar */
-.mobile-cta-bar {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.85rem 1.5rem;
-    background: rgba(10, 11, 16, 0.96);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid var(--glass-border);
-    z-index: 997;
-    transform: translateY(100%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-cta-bar.visible {
-    transform: translateY(0);
-}
-
-.mobile-cta-bar .btn {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-}
-
-@media (max-width: 768px) {
-    .mobile-cta-bar { display: flex; }
-
-    /* Raise WhatsApp float and back-to-top above the bar */
-    .whatsapp-float { bottom: 90px; }
-    .back-to-top { bottom: 160px; }
-}
-
-/* Hero slideshow image transition */
-.browser-content img {
-    transition: opacity 0.4s ease;
-}
-
-/* Process connecting line */
-@media (min-width: 1050px) {
-    .process-steps {
-        position: relative;
-    }
-    .process-steps::before {
-        content: '';
-        position: absolute;
-        top: 30px;
-        left: 10%;
-        right: 10%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary) 20%, var(--secondary) 80%, transparent);
-        opacity: 0.25;
-        pointer-events: none;
-    }
-    .step {
-        position: relative;
-        z-index: 1;
-    }
-}
-
-/* Back to top button */
-.back-to-top {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 44px;
-    height: 44px;
-    background: var(--gradient);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 20px rgba(0, 210, 255, 0.3);
-    pointer-events: none;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.back-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.5);
-}
-
-/* Contact Section */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 2.5rem;
-    align-items: start;
-}
-
-@media (max-width: 860px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.form-group input,
-.form-group textarea {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 0.9rem 1.2rem;
-    color: var(--text-main);
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s, background 0.3s;
-    resize: none;
-    width: 100%;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: rgba(0, 210, 255, 0.05);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.2);
-}
-
-.form-submit {
-    width: 100%;
-    justify-content: center;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-info-item {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    padding: 1.2rem 1.5rem;
-}
-
-.contact-info-item > i {
-    font-size: 1.3rem;
-    color: var(--primary);
-    width: 40px;
-    flex-shrink: 0;
-    text-align: center;
-}
-
-.contact-info-item strong {
-    display: block;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.2rem;
-    color: var(--text-muted);
-}
-
-.contact-info-item a,
-.contact-info-item span {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-}
-
-.contact-info-item a:hover {
-    color: var(--primary);
-}
-
-/* ============================================
-   Mejoras visuales: marquee, portfolio hover
-   premium, timeline de proceso
-   ============================================ */
-
-/* --- Marquee de clientes --- */
-.trusted-marquee {
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
-    mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
-}
-
-.trusted-track {
-    display: flex;
-    gap: 2.5rem;
-    width: max-content;
-    animation: marqueeSlide 32s linear infinite;
-}
-
-.trusted-track:hover {
-    animation-play-state: paused;
-}
-
-.trusted-track .trusted-grid {
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-}
-
-@keyframes marqueeSlide {
-    to { transform: translateX(calc(-50% - 1.25rem)); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .trusted-track { animation: none; width: 100%; }
-    .trusted-track .trusted-grid { flex-wrap: wrap; }
-    .trusted-track .trusted-grid[aria-hidden="true"] { display: none; }
-    .trusted-marquee { -webkit-mask-image: none; mask-image: none; }
-}
-
-/* --- Portfolio hover premium --- */
-.portfolio-item:hover .portfolio-img {
-    transform: scale(1.08);
-    filter: brightness(1.06) saturate(1.08);
-}
-
-.portfolio-img {
-    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.7s ease;
-}
-
-.portfolio-info {
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.portfolio-item:hover .portfolio-info {
-    transform: translateY(-6px);
-}
-
-.portfolio-item:hover .portfolio-badge {
-    background: rgba(0, 210, 255, 0.15);
-    border-color: var(--primary);
-    box-shadow: 0 0 20px -5px rgba(0, 210, 255, 0.5);
-}
-
-.portfolio-badge {
-    transition: var(--transition);
-}
-
-.view-link i {
-    display: inline-block;
-    transition: transform 0.35s ease;
-}
-
-.portfolio-item:hover .view-link i {
-    transform: translateX(5px);
-}
-
-/* Grilla: el noveno proyecto completa la última fila */
-.portfolio-item:nth-child(9) { grid-column: span 2; }
-
-/* --- Timeline del proceso --- */
-.process-steps::before {
-    content: '';
-    position: absolute;
-    top: 30px;
-    left: 6%;
-    right: 6%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.07);
-    z-index: 0;
-}
-
-.process-line {
-    position: absolute;
-    top: 29px;
-    left: 6%;
-    height: 3px;
-    width: 0;
-    max-width: 88%;
-    background: var(--gradient);
-    border-radius: 2px;
-    box-shadow: 0 0 14px rgba(0, 210, 255, 0.55);
-    z-index: 0;
-    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.process.in-view .process-line {
-    width: 88%;
-}
-
-.step-num {
-    position: relative;
-    z-index: 1;
-    filter: grayscale(35%) brightness(0.75);
-    transition: filter 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
-}
-
-.process.in-view .step .step-num {
-    filter: none;
-    box-shadow: 0 0 25px -4px rgba(0, 210, 255, 0.65);
-    transform: scale(1.06);
-}
-
-.process.in-view .step:nth-child(2) .step-num { transition-delay: 0.15s; }
-.process.in-view .step:nth-child(3) .step-num { transition-delay: 0.5s; }
-.process.in-view .step:nth-child(4) .step-num { transition-delay: 0.85s; }
-.process.in-view .step:nth-child(5) .step-num { transition-delay: 1.2s; }
-.process.in-view .step:nth-child(6) .step-num { transition-delay: 1.55s; }
-
-@media (max-width: 1100px) {
-    .process-steps::before,
-    .process-line { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .process-line { transition: none; }
-    .step-num { transition: none; filter: none; }
-}
-

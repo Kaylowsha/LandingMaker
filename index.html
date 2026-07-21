@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="vR9JbgOqi6Cmakm01HVPB1SXgJpqOVC7bMTFLPY2wyg">
-
     <!-- Primary SEO -->
     <title>Diseño Web y Landing Pages en Chile | Austral Prints 3D</title>
     <meta name="description" content="Diseño de landing pages profesionales en Chile. Sitios rápidos, responsive y optimizados para SEO con IA. Desde $200.000 con base de datos incluida. Entrega en 10 días.">
@@ -42,11 +39,13 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Preload critical assets -->
-    <link rel="preload" as="image" href="assets/hero-bg.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
     <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
 
-    <!-- Fuente Outfit self-hosteada (ver @font-face en style.css) -->
-    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/outfit-latin.woff2" crossorigin>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome (non-blocking) -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -98,7 +97,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "App de Gestión (PWA)",
+              "name": "PWA de Gestión",
               "description": "Aplicación instalable en celular sin tiendas, con control de stock, ventas, cotizaciones PDF y boletas por WhatsApp."
             },
             "price": "200000",
@@ -156,30 +155,6 @@
             "@type": "Answer",
             "text": "Textos o ideas de contenido, fotos de tu negocio, información de contacto y tus palabras clave objetivo."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "¿El hosting está incluido en el precio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí. El despliegue profesional está incluido en todos los planes. Usamos plataformas de hosting gratuitas de alto rendimiento (Vercel o similares). El único gasto externo es el dominio (~$10.000 CLP/año)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Pueden hacer cambios después de entregar el sitio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Durante el proceso incluyo rondas de revisión hasta que estés conforme. Una vez entregado, cambios adicionales se coordinan directamente según el alcance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Se puede pagar en cuotas?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí. Generalmente 50% para comenzar el desarrollo y 50% al momento de la entrega. Coordinamos los detalles por WhatsApp antes de empezar, sin compromiso."
-          }
         }
       ]
     }
@@ -205,7 +180,6 @@
                     <li><a href="#precios">Precios</a></li>
                     <li><a href="#proceso">Proceso</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 <a href="https://wa.me/56922050705" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Contactar
@@ -218,8 +192,9 @@
     </header>
 
     <main>
-    <!-- Hero Section -->
+    <!-- Hero Section con Partículas -->
     <section id="inicio" class="hero">
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
         <div class="hero-background"></div>
         <div class="container hero-container">
             <div class="hero-content">
@@ -250,16 +225,16 @@
                             <span>tunegocio.cl</span>
                         </div>
                     </div>
-                    <div class="browser-content" id="hero-slideshow" data-images="assets/portfolio-1.webp,assets/portfolio-2.webp,assets/portfolio-3.webp,assets/portfolio-5.webp,assets/portfolio-6.webp">
-                        <img src="assets/portfolio-1.webp" alt="" decoding="async" fetchpriority="high">
+                    <div class="browser-content">
+                        <img src="assets/portfolio-1.jpg" alt="" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="mockup-glow"></div>
                 <div class="mockup-card mockup-card-1">
                     <i class="fas fa-chart-line" aria-hidden="true"></i>
                     <div>
-                        <strong>7 días</strong>
-                        <span>primeras consultas</span>
+                        <strong>+187%</strong>
+                        <span>conversión</span>
                     </div>
                 </div>
                 <div class="mockup-card mockup-card-2">
@@ -282,60 +257,26 @@
     <section class="trusted" aria-label="Empresas que confían en nosotros">
         <div class="container">
             <p class="trusted-label">Empresas que ya confían en nosotros</p>
-            <div class="trusted-marquee">
-                <div class="trusted-track">
-                    <div class="trusted-grid">
-                        <div class="trusted-item">
-                            <i class="fas fa-music" aria-hidden="true"></i>
-                            <span>Inventiva Música</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-snowflake" aria-hidden="true"></i>
-                            <span>Eco Clima</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-scissors" aria-hidden="true"></i>
-                            <span>Barber Flow</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-calculator" aria-hidden="true"></i>
-                            <span>MultiBoost Lite</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-shop" aria-hidden="true"></i>
-                            <span>Tienda Amapolas</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-guitar" aria-hidden="true"></i>
-                            <span>La Rata Bluesera</span>
-                        </div>
-                    </div>
-                    <div class="trusted-grid" aria-hidden="true">
-                        <div class="trusted-item">
-                            <i class="fas fa-music" aria-hidden="true"></i>
-                            <span>Inventiva Música</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-snowflake" aria-hidden="true"></i>
-                            <span>Eco Clima</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-scissors" aria-hidden="true"></i>
-                            <span>Barber Flow</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-calculator" aria-hidden="true"></i>
-                            <span>MultiBoost Lite</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-shop" aria-hidden="true"></i>
-                            <span>Tienda Amapolas</span>
-                        </div>
-                        <div class="trusted-item">
-                            <i class="fas fa-guitar" aria-hidden="true"></i>
-                            <span>La Rata Bluesera</span>
-                        </div>
-                    </div>
+            <div class="trusted-grid">
+                <div class="trusted-item">
+                    <i class="fas fa-music" aria-hidden="true"></i>
+                    <span>Inventiva Música</span>
+                </div>
+                <div class="trusted-item">
+                    <i class="fas fa-snowflake" aria-hidden="true"></i>
+                    <span>Eco Clima</span>
+                </div>
+                <div class="trusted-item">
+                    <i class="fas fa-scissors" aria-hidden="true"></i>
+                    <span>Barber Flow</span>
+                </div>
+                <div class="trusted-item">
+                    <i class="fas fa-calculator" aria-hidden="true"></i>
+                    <span>MultiBoost Lite</span>
+                </div>
+                <div class="trusted-item">
+                    <i class="fas fa-shop" aria-hidden="true"></i>
+                    <span>Tienda Amapolas</span>
                 </div>
             </div>
         </div>
@@ -346,7 +287,7 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat">
-                    <strong class="stat-num" data-target="9" data-suffix="+">0</strong>
+                    <strong class="stat-num" data-target="8" data-suffix="+">0</strong>
                     <span>Proyectos entregados</span>
                 </div>
                 <div class="stat">
@@ -408,15 +349,10 @@
                 <h2>Casos de <span class="gradient-text">Éxito</span></h2>
                 <p>Algunos de nuestros últimos proyectos realizados.</p>
             </div>
-            <div class="portfolio-filter" role="group" aria-label="Filtrar proyectos">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="landing">Landing Page</button>
-                <button class="filter-btn" data-filter="pwa">PWA</button>
-            </div>
             <div class="portfolio-grid">
                 <!-- Inventiva Música (Landing) -->
-                <a href="https://www.inventivamusica.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Inventiva Música - Escuela de Música">
-                    <img src="assets/portfolio-1.webp" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <a href="https://www.inventivamusica.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Inventiva Música - Escuela de Música">
+                    <img src="assets/portfolio-1.jpg" alt="Diseño de landing page para Inventiva Música, escuela de música en Chile" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -427,8 +363,8 @@
                 </a>
 
                 <!-- Eco Clima (Landing) -->
-                <a href="https://eco-clima-app.vercel.app/landing" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Eco Clima - Servicios de Climatización">
-                    <img src="assets/portfolio-3.webp" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <a href="https://eco-clima-app.vercel.app/landing" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Eco Clima - Servicios de Climatización">
+                    <img src="assets/portfolio-3.jpg" alt="Diseño de landing page para Eco Clima, servicios de climatización" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -439,8 +375,8 @@
                 </a>
 
                 <!-- Barber Flow (Landing) -->
-                <a href="https://barberflowaustral.com/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de Barber Flow - Landing Page para Barberías">
-                    <img src="assets/portfolio-5.webp" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <a href="https://barberflowaustral.com/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de Barber Flow - Landing Page para Barberías">
+                    <img src="assets/portfolio-5.jpg" alt="Diseño de landing page Barber Flow para barberías" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -451,8 +387,8 @@
                 </a>
 
                 <!-- MultiBoost Lite (Landing) -->
-                <a href="https://www.multiboostlite.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de MultiBoost Lite - Plataforma Educativa de Matemáticas">
-                    <img src="assets/portfolio-2.webp" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <a href="https://www.multiboostlite.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" aria-label="Visitar sitio de MultiBoost Lite - Plataforma Educativa de Matemáticas">
+                    <img src="assets/portfolio-2.jpg" alt="Diseño de landing page MultiBoost Lite, plataforma educativa de matemáticas" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge">Landing Page</div>
                     <div class="portfolio-info">
@@ -462,23 +398,11 @@
                     </div>
                 </a>
 
-                <!-- La Rata Bluesera (Landing) -->
-                <a href="https://laratabluesera.cl/" target="_blank" rel="noopener noreferrer" class="portfolio-item glass" data-category="landing" aria-label="Visitar sitio de La Rata Bluesera - Banda de Blues">
-                    <img src="assets/portfolio-6.webp" alt="Diseño de sitio web para La Rata Bluesera, banda de blues de Valdivia" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
-                    <div class="portfolio-overlay"></div>
-                    <div class="portfolio-badge">Landing Page</div>
-                    <div class="portfolio-info">
-                        <h3>La Rata Bluesera</h3>
-                        <p>Banda de Blues · Valdivia</p>
-                        <span class="view-link">Visitar sitio <i class="fas fa-external-link-alt" aria-hidden="true"></i></span>
-                    </div>
-                </a>
-
                 <!-- Barber Flow (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/barber 1.webp,assets/pwa/barber 2.webp,assets/pwa/barber 3.webp,assets/pwa/barber 4.webp,assets/pwa/barber 5.webp" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
-                    <img src="assets/pwa/barber 1.webp" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/barber 1.jpg,assets/pwa/barber 2.jpg,assets/pwa/barber 3.jpg,assets/pwa/barber 4.jpg,assets/pwa/barber 5.jpg" aria-label="Ver galería de Barber Flow App - Gestión de Citas y Barberos">
+                    <img src="assets/pwa/barber 1.jpg" alt="PWA Barber Flow para gestión de citas y barberos" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
-                    <div class="portfolio-badge pwa">App de Gestión</div>
+                    <div class="portfolio-badge pwa">PWA de Gestión</div>
                     <div class="portfolio-info">
                         <h3>Barber Flow (App)</h3>
                         <p>Gestión de Citas y Barberos</p>
@@ -487,10 +411,10 @@
                 </button>
 
                 <!-- Tienda Amapolas (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/Amapolas 1.webp,assets/pwa/Amapolas 2.webp,assets/pwa/Amapolas 3.webp" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
-                    <img src="assets/pwa/Amapolas 1.webp" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/Amapolas 1.jpg,assets/pwa/Amapolas 2.jpg,assets/pwa/Amapolas 3.jpg" aria-label="Ver galería de Tienda Amapolas - Gestión de Ventas y Stock">
+                    <img src="assets/pwa/Amapolas 1.jpg" alt="PWA Tienda Amapolas para gestión de ventas y stock de boutique" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
-                    <div class="portfolio-badge pwa">App de Gestión</div>
+                    <div class="portfolio-badge pwa">PWA de Gestión</div>
                     <div class="portfolio-info">
                         <h3>Tienda Amapolas</h3>
                         <p>Gestión de Ventas y Stock para Boutique</p>
@@ -499,8 +423,8 @@
                 </button>
 
                 <!-- Multiboost Lite (Estudiante) (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multie.webp,assets/pwa/mbe2.webp,assets/pwa/mbe3.webp,assets/pwa/mbe4.webp" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
-                    <img src="assets/pwa/multie.webp" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/multie.jpg,assets/pwa/mbe2.jpg,assets/pwa/mbe3.jpg,assets/pwa/mbe4.jpg" aria-label="Ver galería de MultiBoost Lite Alumno - Plataforma de Aprendizaje">
+                    <img src="assets/pwa/multie.jpg" alt="PWA MultiBoost Lite versión alumno - plataforma de aprendizaje interactiva" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Estudiante</div>
                     <div class="portfolio-info">
@@ -511,8 +435,8 @@
                 </button>
 
                 <!-- Multiboost Lite (Tutor) (PWA) -->
-                <button type="button" class="portfolio-item glass pwa-card" data-category="pwa" data-images="assets/pwa/multit.webp,assets/pwa/mbt1.webp,assets/pwa/mbt2.webp,assets/pwa/mbt3.webp,assets/pwa/mbt4.webp" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
-                    <img src="assets/pwa/multit.webp" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
+                <button type="button" class="portfolio-item glass pwa-card" data-images="assets/pwa/multit.jpg,assets/pwa/mbt1.jpg,assets/pwa/mbt2.jpg,assets/pwa/mbt3.jpg,assets/pwa/mbt4.jpg" aria-label="Ver galería de MultiBoost Lite Tutor - Panel de Gestión para Profesores">
+                    <img src="assets/pwa/multit.jpg" alt="PWA MultiBoost Lite versión tutor - panel de gestión para profesores" class="portfolio-img" loading="lazy" decoding="async" width="600" height="400">
                     <div class="portfolio-overlay"></div>
                     <div class="portfolio-badge pwa">PWA Tutor</div>
                     <div class="portfolio-info">
@@ -544,7 +468,7 @@
                         <li><i class="fas fa-check"></i> Hasta 8 secciones personalizadas</li>
                         <li><i class="fas fa-check"></i> Botón WhatsApp + Formulario</li>
                         <li><i class="fas fa-check"></i> SEO Básico completo</li>
-                        <li><i class="fas fa-database"></i> <span><strong>Tus contactos quedan guardados</strong>: cada consulta se registra automáticamente</span></li>
+                        <li><i class="fas fa-check"></i> Base de datos básica (Supabase o Neon)</li>
                         <li><i class="fas fa-rocket"></i> <span><strong>Despliegue profesional</strong> incluido</span></li>
                         <li><i class="fas fa-hand-holding-heart"></i> Asesoría en compra de tu dominio</li>
                         <li><i class="fas fa-check"></i> Entrega en 10 días hábiles</li>
@@ -554,11 +478,11 @@
                 <!-- Option PWA -->
                 <div class="pricing-card glass">
                     <div class="card-header">
-                        <h3>App de Gestión</h3>
+                        <h3>PWA de Gestión</h3>
                         <div class="price">$200.000<span class="price-suffix">CLP · Pago único</span></div>
                     </div>
                     <ul class="card-features">
-                        <li><i class="fas fa-mobile-alt"></i> <span><strong>Se instala en tu celular</strong> como app, sin pasar por tiendas ni pagar suscripciones</span></li>
+                        <li><i class="fas fa-mobile-alt"></i> <span><strong>Instalable en celular</strong> como app nativa</span></li>
                         <li><i class="fas fa-bullseye"></i> <span>Ideal para: <strong>barberías, tiendas, ventas por redes, inventarios</strong></span></li>
                         <li><i class="fas fa-chart-bar"></i> Control de Stock, Citas o Ventas según tu rubro</li>
                         <li><i class="fas fa-file-pdf"></i> <strong>Cotizaciones PDF al instante</strong></li>
@@ -575,16 +499,16 @@
                     <div class="badge">Recomendado</div>
                     <div class="card-header">
                         <h3>Landing Pro + Panel</h3>
-                        <div class="price">$300.000<span class="price-suffix">CLP · Pago único</span></div>
+                        <div class="price">$300.000</div>
                     </div>
                     <ul class="card-features">
                         <li><i class="fas fa-plus"></i> Todo lo de la Estándar</li>
-                        <li><i class="fas fa-envelope"></i> <span><strong>Email profesional @tudominio</strong>: escribe desde contacto@tunegocio.cl</span></li>
-                        <li><i class="fas fa-images"></i> <span><strong>Cambia tus fotos cuando quieras</strong>, sin tocar código (Cloudinary)</span></li>
+                        <li><i class="fas fa-envelope"></i> <strong>Email dedicado @tudominio</strong></li>
+                        <li><i class="fas fa-images"></i> Gestión de imágenes con Cloudinary</li>
                         <li><i class="fas fa-database"></i> Base de datos avanzada (Supabase)</li>
-                        <li><i class="fas fa-sliders"></i> <span><strong>Panel autogestionable</strong>: edita textos, precios y contenido tú mismo</span></li>
+                        <li><i class="fas fa-sliders"></i> <strong>Panel Autogestionable</strong></li>
                         <li><i class="fas fa-headset"></i> Acompañamiento end-to-end</li>
-                        <li><i class="fas fa-arrow-up-right-dots"></i> <span><strong>Preparada para crecer</strong>: catálogo, reservas o nuevas secciones sin rehacer el sitio</span></li>
+                        <li><i class="fas fa-arrow-up-right-dots"></i> Mayor escalabilidad</li>
                     </ul>
                     <a href="https://wa.me/56922050705?text=Hola!%20Quiero%20cotizar%20el%20plan%20*Landing%20Pro%20%2B%20Panel*%20(%24300.000).%0A%0AMi%20negocio%3A%20%0AQu%C3%A9%20ofrezco%3A%20%0AContenido%20que%20necesito%20gestionar%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Solicitar Landing Pro por WhatsApp">Elegir Pro</a>
                 </div>
@@ -719,10 +643,6 @@
                     </tbody>
                 </table>
             </div>
-            <p class="pricing-note">
-                <i class="fas fa-circle-info" aria-hidden="true"></i>
-                <span><strong>¿Cuál me conviene?</strong> Los planes Estándar y Pro son tu <em>sitio público</em> para atraer clientes; la App de Gestión es tu <em>herramienta interna</em> para administrar el negocio. Son complementarios: si necesitas ambos, escríbeme y armamos un plan a tu medida.</span>
-            </p>
         </div>
     </section>
 
@@ -734,7 +654,6 @@
                 <p>De la idea a la realidad en tiempo récord.</p>
             </div>
             <div class="process-steps">
-                <div class="process-line" aria-hidden="true"></div>
                 <div class="step">
                     <div class="step-num">1</div>
                     <h4>Brief Inicial</h4>
@@ -781,7 +700,7 @@
                         <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <blockquote>
-                        <p>“Atención impecable y la landing quedó muy profesional. Empecé a recibir consultas la primera semana.”</p>
+                        <p>"Atención impecable y la landing quedó muy profesional. Empecé a recibir consultas la primera semana."</p>
                     </blockquote>
                     <figcaption>
                         <div class="testimonial-avatar" aria-hidden="true">IM</div>
@@ -800,7 +719,7 @@
                         <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <blockquote>
-                        <p>“La PWA nos cambió la forma de trabajar: stock, ventas y boletas por WhatsApp en un solo lugar.”</p>
+                        <p>"La PWA nos cambió la forma de trabajar: stock, ventas y boletas por WhatsApp en un solo lugar."</p>
                     </blockquote>
                     <figcaption>
                         <div class="testimonial-avatar" aria-hidden="true">TA</div>
@@ -819,7 +738,7 @@
                         <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <blockquote>
-                        <p>“Rápidos, transparentes con los costos y siempre dispuestos a ajustar detalles. 100% recomendados.”</p>
+                        <p>"Rápidos, transparentes con los costos y siempre dispuestos a ajustar detalles. 100% recomendados."</p>
                     </blockquote>
                     <figcaption>
                         <div class="testimonial-avatar" aria-hidden="true">EC</div>
@@ -855,77 +774,6 @@
                 <div class="faq-item glass">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a4">¿Qué necesito para empezar? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
                     <div class="faq-answer" id="faq-a4">Textos o ideas de contenido, fotos de tu negocio, información de contacto y tus palabras clave objetivo.</div>
-                </div>
-                <div class="faq-item glass">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a5">¿El hosting está incluido en el precio? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
-                    <div class="faq-answer" id="faq-a5">Sí. El despliegue profesional está incluido en todos los planes. Usamos plataformas de hosting gratuitas de alto rendimiento (Vercel o similares) que soportan tráfico real sin costo mensual. El único gasto externo es el dominio (~$10.000 CLP/año), en el que te asesoro personalmente.</div>
-                </div>
-                <div class="faq-item glass">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a6">¿Pueden hacer cambios después de entregar el sitio? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
-                    <div class="faq-answer" id="faq-a6">Durante el proceso incluyo rondas de revisión hasta que estés conforme. Una vez entregado el proyecto con todos los accesos, cambios menores (textos, fotos, colores) los puedes coordinar directamente conmigo a un costo adicional según el alcance.</div>
-                </div>
-                <div class="faq-item glass">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a7">¿Se puede pagar en cuotas? <i class="fas fa-chevron-down" aria-hidden="true"></i></div>
-                    <div class="faq-answer" id="faq-a7">Sí, coordinamos el pago de forma flexible: generalmente 50% para comenzar el desarrollo y 50% al momento de la entrega. Conversamos los detalles por WhatsApp antes de empezar, sin compromiso.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Escríbeme <span class="gradient-text">directamente</span></h2>
-                <p>Te respondo en menos de 24 horas, sin compromiso.</p>
-            </div>
-            <div class="contact-wrapper">
-                <form class="contact-form glass" id="contact-form" novalidate>
-                    <div class="form-group">
-                        <label for="cf-nombre">Tu nombre</label>
-                        <input type="text" id="cf-nombre" name="nombre" placeholder="Ej: María González" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cf-negocio">Tu negocio o rubro</label>
-                        <input type="text" id="cf-negocio" name="negocio" placeholder="Ej: Peluquería, tienda, clínica..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cf-mensaje">¿Qué necesitas?</label>
-                        <textarea id="cf-mensaje" name="mensaje" rows="4" placeholder="Cuéntame tu idea o qué tipo de sitio buscas..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg form-submit">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar por WhatsApp
-                    </button>
-                </form>
-                <div class="contact-info">
-                    <div class="contact-info-item glass">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        <div>
-                            <strong>WhatsApp</strong>
-                            <a href="https://wa.me/56922050705" target="_blank" rel="noopener noreferrer">+56 9 2205 0705</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item glass">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <a href="mailto:australprints3d@gmail.com">australprints3d@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item glass">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        <div>
-                            <strong>Horario de atención</strong>
-                            <span>Lunes a Sábado · Respuesta &lt; 24h</span>
-                        </div>
-                    </div>
-                    <div class="contact-info-item glass">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                        <div>
-                            <strong>Ubicación</strong>
-                            <span>Chile · Servicio a todo el país</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -979,7 +827,7 @@
                     <h4>Servicios</h4>
                     <ul>
                         <li><a href="#precios">Landing Estándar</a></li>
-                        <li><a href="#precios">App de Gestión (PWA)</a></li>
+                        <li><a href="#precios">PWA de Gestión</a></li>
                         <li><a href="#precios">Landing Pro + Panel</a></li>
                         <li><a href="#proyectos">Portafolio</a></li>
                     </ul>
@@ -993,7 +841,6 @@
                         <li><a href="#proceso">Proceso</a></li>
                         <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#faq">Preguntas frecuentes</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
 
@@ -1011,18 +858,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Mobile CTA Bar -->
-    <div class="mobile-cta-bar" id="mobile-cta-bar">
-        <a href="https://wa.me/56922050705?text=Hola!%20Quiero%20cotizar%20mi%20landing" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar ahora
-        </a>
-    </div>
-
-    <!-- Back to Top -->
-    <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/56922050705" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
