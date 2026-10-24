@@ -1,11 +1,11 @@
 {
-    "name": "Austral Prints 3D - Diseño Web en Chile",
+    "name": "Austral Prints 3D",
     "short_name": "Austral Prints 3D",
-    "description": "Diseño de landing pages profesionales y PWAs en Chile. Sitios rápidos y optimizados para SEO con IA.",
+    "description": "Impresión 3D personalizada en Hualaihué: merch, kits y piezas a pedido. También diseño web en Chile.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0a0b10",
-    "theme_color": "#0a0b10",
+    "background_color": "#1a1c1f",
+    "theme_color": "#1a1c1f",
     "lang": "es-CL",
     "icons": [
         {

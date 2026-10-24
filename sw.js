@@ -1,4 +1,4 @@
-const CACHE = 'ap3d-v6';
+const CACHE = 'ap3d-v7';
 const PRECACHE = [
   '/',
   '/index.html',

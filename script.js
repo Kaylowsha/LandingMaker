@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.setAttribute('aria-expanded', String(willOpen));
         });
 
-        // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
+        // Close menu when clicking a link or a view button
+        navLinks.querySelectorAll('a, button').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
@@ -119,18 +119,30 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Count-up animation for stats
+    // Count-up animation for stats. Starts from the number already in the HTML
+    // so the final value is visible even if this script never runs.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const animateCount = (el) => {
         const target = parseFloat(el.dataset.target);
         const suffix = el.dataset.suffix || '';
         const prefix = el.dataset.prefix || '';
+        const match = (el.textContent || '').replace(',', '.').match(/[\d.]+/);
+        const from = match ? parseFloat(match[0]) : 0;
+        const format = (value) => {
+            const shown = target % 1 === 0 ? Math.round(value) : Number(value).toFixed(1);
+            return `${prefix}${shown}${suffix}`;
+        };
+        if (!Number.isFinite(target) || reduceMotion || from === target) {
+            if (Number.isFinite(target)) el.textContent = format(target);
+            return;
+        }
         const duration = 1500;
         const start = performance.now();
         const step = (now) => {
             const progress = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            const value = target * eased;
-            el.textContent = `${prefix}${target % 1 === 0 ? Math.floor(value) : value.toFixed(1)}${suffix}`;
+            const value = from + (target - from) * eased;
+            el.textContent = progress === 1 ? format(target) : format(value);
             if (progress < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);
@@ -169,14 +181,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile CTA bar
+    // Mobile CTA bar — uses the hero of the view that is actually visible
     const mobileCta = document.getElementById('mobile-cta-bar');
-    const heroSection = document.getElementById('inicio');
-    if (mobileCta && heroSection) {
-        window.addEventListener('scroll', () => {
-            mobileCta.classList.toggle('visible', heroSection.getBoundingClientRect().bottom < 0);
-        }, { passive: true });
-    }
+    const syncMobileCta = () => {
+        if (!mobileCta) return;
+        const activeHero = document.querySelector('.site-view:not([hidden]) .hero');
+        if (!activeHero) return;
+        mobileCta.classList.toggle('visible', activeHero.getBoundingClientRect().bottom < 0);
+    };
+    window.addEventListener('scroll', syncMobileCta, { passive: true });
+    syncMobileCta();
 
     // Hero slideshow
     const heroSlideshow = document.getElementById('hero-slideshow');
@@ -214,13 +228,107 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const nombre = document.getElementById('cf-nombre').value.trim();
-            const negocio = document.getElementById('cf-negocio').value.trim();
+            const interes = document.getElementById('cf-interes').value.trim();
             const mensaje = document.getElementById('cf-mensaje').value.trim();
-            if (!nombre || !negocio || !mensaje) return;
-            const text = `Hola! Te escribo desde tu sitio web.\n\n*Nombre:* ${nombre}\n*Negocio/Rubro:* ${negocio}\n*Mensaje:* ${mensaje}`;
+            if (!nombre || !interes || !mensaje) return;
+            const text = `Hola Austral Prints 3D, te escribo desde el sitio.\n\n*Nombre:* ${nombre}\n*Me interesa:* ${interes}\n*Mensaje:* ${mensaje}`;
             window.open(`https://wa.me/56922050705?text=${encodeURIComponent(text)}`, '_blank');
         });
     }
+
+    // Vista: Impresión 3D (#3d, default) o Diseño Web (#webs)
+    const WEB_HASHES = new Set(['webs', 'inicio-web', 'servicios', 'proyectos', 'precios', 'proceso', 'testimonios', 'faq']);
+    const SCROLL_IDS = new Set([
+        'kit-fauna', 'productos', 'materiales', 'contacto',
+        'inicio-web', 'servicios', 'proyectos', 'precios', 'proceso', 'testimonios', 'faq'
+    ]);
+    const view3d = document.getElementById('view-3d');
+    const viewWebs = document.getElementById('webs');
+    const viewAnnouncer = document.getElementById('view-announcer');
+    let currentView = '3d';
+    let routeReady = false;
+
+    const revealVisible = () => {
+        document.querySelectorAll('.site-view:not([hidden]) .glass, .site-view:not([hidden]) .step, .site-view:not([hidden]) .section-header').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < window.innerHeight * 0.95) {
+                el.classList.add('fade-in');
+                el.style.opacity = '';
+            }
+        });
+    };
+
+    const applyRoute = () => {
+        const id = (location.hash || '').replace(/^#/, '');
+        const view = WEB_HASHES.has(id) ? 'webs' : (id === 'contacto' ? currentView : '3d');
+        currentView = view;
+        if (view3d && viewWebs) {
+            view3d.hidden = view !== '3d';
+            viewWebs.hidden = view !== 'webs';
+        }
+        document.documentElement.classList.remove('boot-webs');
+        document.querySelectorAll('[data-view]').forEach(el => {
+            const on = el.dataset.view === view;
+            el.classList.toggle('is-active', on);
+            if (el.getAttribute('role') === 'tab') {
+                el.setAttribute('aria-selected', on ? 'true' : 'false');
+                el.tabIndex = on ? 0 : -1;
+            } else {
+                el.setAttribute('aria-pressed', on ? 'true' : 'false');
+            }
+        });
+        if (routeReady && viewAnnouncer) {
+            viewAnnouncer.textContent = view === '3d' ? 'Mostrando Impresión 3D' : 'Mostrando Diseño Web';
+        }
+        const behavior = reduceMotion ? 'auto' : 'smooth';
+        const scrollNow = () => {
+            if (!routeReady && !id) {
+                revealVisible();
+                syncMobileCta();
+                return;
+            }
+            if (SCROLL_IDS.has(id)) {
+                const target = document.getElementById(id);
+                if (target) target.scrollIntoView({ behavior, block: 'start' });
+            } else if (id === '3d' || id === 'webs' || id === 'inicio') {
+                window.scrollTo({ top: 0, behavior });
+            }
+            revealVisible();
+            syncMobileCta();
+        };
+        requestAnimationFrame(scrollNow);
+        routeReady = true;
+    };
+
+    document.querySelectorAll('[data-hash]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const hash = btn.getAttribute('data-hash');
+            if (!hash) return;
+            if (location.hash === hash) applyRoute();
+            else location.hash = hash;
+            if (typeof closeMobileMenu === 'function') closeMobileMenu();
+        });
+    });
+
+    document.querySelectorAll('[role="tablist"]').forEach(list => {
+        const tabs = [...list.querySelectorAll('[role="tab"]')];
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('keydown', (e) => {
+                if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) return;
+                e.preventDefault();
+                let next = index;
+                if (e.key === 'ArrowRight') next = (index + 1) % tabs.length;
+                if (e.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+                if (e.key === 'Home') next = 0;
+                if (e.key === 'End') next = tabs.length - 1;
+                tabs[next].focus();
+                tabs[next].click();
+            });
+        });
+    });
+
+    window.addEventListener('hashchange', applyRoute);
+    applyRoute();
 
     // 3D Tilt effect on portfolio cards (skip if reduced motion)
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
