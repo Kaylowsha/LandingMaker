@@ -2433,6 +2433,21 @@ html.boot-webs #webs { display: block !important; }
 #clubes,
 #faq-3d { scroll-margin-top: 120px; }
 
+@media (max-width: 992px) {
+    #guia-3d,
+    #como-pedir,
+    #precios-cantidad,
+    #pla-petg,
+    #clubes,
+    #faq-3d,
+    #productos,
+    #kit-fauna,
+    #contacto {
+        scroll-margin-top: 156px;
+    }
+}
+
+.guide-tabs { scroll-margin-top: 132px; }
 .guide-tabs a { text-decoration: none; }
 
 .guide-tabs:not(:has(~ .guide-panels .guide-panel:target)) [href="#como-pedir"],
@@ -2457,7 +2472,35 @@ html:has(.guide-panel:target) .guide-panel:not(:target) { display: none !importa
 #faq-3d .faq-item.active .faq-answer { max-height: 560px; }
 
 #como-pedir .step-num { filter: none; }
-#como-pedir .step h4 { font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+#como-pedir .step h4 { font-size: 1.05rem; font-weight: 600; line-height: 1.4; }
+#como-pedir .section-header a:not(.btn),
+#como-pedir .step h4 a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+#como-pedir .section-header a:not(.btn):hover,
+#como-pedir .step h4 a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+    .guide-tabs { scroll-margin-top: 148px; gap: 0.4rem; margin-bottom: 1rem; }
+    .guide-tabs .filter-btn { padding: 0.4rem 0.85rem; font-size: 0.82rem; }
+    #guia-3d { padding-top: 48px; padding-bottom: 56px; }
+    #guia-3d > .container > .section-header { margin-bottom: 1rem; }
+    #como-pedir .section-header { margin-bottom: 0.75rem; }
+    #como-pedir .section-header h3 { font-size: 1.45rem; }
+    #como-pedir .section-header p { font-size: 1rem; }
+    #como-pedir .process-steps { gap: 0.75rem; }
+    #como-pedir .step-num {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+    #como-pedir .section-header:last-child { margin-top: 1rem; }
+    #como-pedir .step h4 { font-size: 0.98rem; }
+    #como-pedir .btn { width: 100%; }
+}
 
 .guide-note {
     text-align: center;

@@ -303,8 +303,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (GUIDE_IDS.includes(id)) {
                 showGuide(id);
-                const guide = document.getElementById('guia-3d');
-                if (guide) guide.scrollIntoView({ behavior, block: 'start' });
+                const tabs = document.querySelector('.guide-tabs');
+                const navH = document.getElementById('navbar').offsetHeight;
+                if (tabs) {
+                    const top = tabs.getBoundingClientRect().top + window.scrollY - navH - 16;
+                    window.scrollTo({ top: Math.max(0, top), behavior });
+                }
             } else if (SCROLL_IDS.has(id)) {
                 const target = document.getElementById(id);
                 if (target) target.scrollIntoView({ behavior, block: 'start' });
@@ -315,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
             syncMobileCta();
         };
         requestAnimationFrame(scrollNow);
+        setTimeout(scrollNow, 60);
         routeReady = true;
     };
 
