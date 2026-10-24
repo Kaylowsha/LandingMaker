@@ -209,8 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Timeline del proceso: se dibuja al entrar en viewport
-    const processSection = document.querySelector('.process');
-    if (processSection) {
+    document.querySelectorAll('.process').forEach(processSection => {
         const processObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -220,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.35 });
         processObserver.observe(processSection);
-    }
+    });
 
     // Contact form → WhatsApp
     const contactForm = document.getElementById('contact-form');
@@ -238,10 +237,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Vista: Impresión 3D (#3d, default) o Diseño Web (#webs)
     const WEB_HASHES = new Set(['webs', 'inicio-web', 'servicios', 'proyectos', 'precios', 'proceso', 'testimonios', 'faq']);
+    const GUIDE_IDS = ['como-pedir', 'precios-cantidad', 'pla-petg', 'clubes', 'faq-3d'];
     const SCROLL_IDS = new Set([
-        'kit-fauna', 'productos', 'materiales', 'contacto',
+        'kit-fauna', 'productos', 'materiales', 'contacto', 'guia-3d',
+        ...GUIDE_IDS,
         'inicio-web', 'servicios', 'proyectos', 'precios', 'proceso', 'testimonios', 'faq'
     ]);
+    const showGuide = (id) => {
+        if (!GUIDE_IDS.includes(id)) return;
+        document.querySelectorAll('.guide-panel').forEach(panel => {
+            panel.hidden = panel.id !== id;
+        });
+        document.querySelectorAll('[data-guide]').forEach(tab => {
+            const on = tab.getAttribute('data-guide') === id;
+            tab.classList.toggle('active', on);
+            tab.setAttribute('aria-selected', on ? 'true' : 'false');
+            if (tab.getAttribute('role') === 'tab') tab.tabIndex = on ? 0 : -1;
+        });
+    };
     const view3d = document.getElementById('view-3d');
     const viewWebs = document.getElementById('webs');
     const viewAnnouncer = document.getElementById('view-announcer');
@@ -288,7 +301,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 syncMobileCta();
                 return;
             }
-            if (SCROLL_IDS.has(id)) {
+            if (GUIDE_IDS.includes(id)) {
+                showGuide(id);
+                const guide = document.getElementById('guia-3d');
+                if (guide) guide.scrollIntoView({ behavior, block: 'start' });
+            } else if (SCROLL_IDS.has(id)) {
                 const target = document.getElementById(id);
                 if (target) target.scrollIntoView({ behavior, block: 'start' });
             } else if (id === '3d' || id === 'webs' || id === 'inicio') {

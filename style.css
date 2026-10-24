@@ -2419,3 +2419,74 @@ html.boot-webs #webs { display: block !important; }
     .hero { padding-top: 168px; }
 }
 
+/* Guía de encargo dentro de Impresión 3D */
+@media (min-width: 993px) {
+    .nav-links { gap: 1.05rem; }
+    .nav-links a,
+    .nav-links button { font-size: 0.95rem; white-space: nowrap; }
+}
+
+#guia-3d,
+#como-pedir,
+#precios-cantidad,
+#pla-petg,
+#clubes,
+#faq-3d { scroll-margin-top: 120px; }
+
+.guide-tabs a { text-decoration: none; }
+
+.guide-tabs:not(:has(~ .guide-panels .guide-panel:target)) [href="#como-pedir"],
+html:has(#como-pedir:target) [href="#como-pedir"].filter-btn,
+html:has(#precios-cantidad:target) [href="#precios-cantidad"].filter-btn,
+html:has(#pla-petg:target) [href="#pla-petg"].filter-btn,
+html:has(#clubes:target) [href="#clubes"].filter-btn,
+html:has(#faq-3d:target) [href="#faq-3d"].filter-btn {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+}
+
+.guide-panel[hidden] { display: none !important; }
+.guide-panel:target { display: block !important; }
+html:has(.guide-panel:target) .guide-panel:not(:target) { display: none !important; }
+
+.guide-panel .section-header { margin-bottom: 1.75rem; }
+.guide-panel .section-header:last-child { margin-top: 2rem; margin-bottom: 0; }
+.guide-panel .section-header h3 { font-size: 2rem; }
+
+#faq-3d .faq-item.active .faq-answer { max-height: 560px; }
+
+#como-pedir .step-num { filter: none; }
+#como-pedir .step h4 { font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+
+.guide-note {
+    text-align: center;
+    margin-top: 1.75rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.hero-proof .made-seal,
+.footer-bottom .made-seal {
+    background: var(--gradient);
+    border-color: transparent;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.4);
+}
+
+.hero-proof .made-seal i,
+.footer-bottom .made-seal i { color: #fff; }
+
+.footer-bottom .made-seal {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0.55rem 1.5rem;
+    border-radius: 50px;
+}
+
