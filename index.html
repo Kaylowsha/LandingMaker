@@ -13,7 +13,7 @@
     <meta name="keywords" content="impresión 3D Hualaihué, impresión 3D Los Lagos, llaveros personalizados, canilleras de fútbol, merchandising 3D, kit fauna austral, Multibus, Austral Prints 3D, diseño web Chile, landing page, PWA">
     <meta name="author" content="Austral Prints 3D">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#1a1c1f">
+    <meta name="theme-color" content="#0a0b10">
     <link rel="canonical" href="https://australprints3d.cl/">
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
@@ -185,8 +185,8 @@
         "itemOffered": {
           "@type": "Product",
           "name": "Multibus",
-          "url": "https://multibus.cl",
-          "description": "Tablas de multiplicar impresas en 3D. En el reverso, un código QR abre https://multibus.cl, la plataforma para practicar. Impreso en PLA o PETG en Hualaihué."
+          "url": "https://multiboostlite.cl",
+          "description": "Tablas de multiplicar impresas en 3D. En el reverso, un código QR abre https://multiboostlite.cl, la plataforma para practicar. Impreso en PLA o PETG en Hualaihué."
         }
       },
       {
@@ -358,8 +358,8 @@
                 </button>
             </div>
             <div class="mobile-view-switch" role="tablist" aria-label="Cambiar entre Impresión 3D y Diseño Web">
-                <button type="button" role="tab" id="tab-3d" aria-selected="true" aria-controls="view-3d" data-view="3d" data-hash="#3d">Impresión 3D</button>
-                <button type="button" role="tab" id="tab-webs" aria-selected="false" aria-controls="webs" tabindex="-1" data-view="webs" data-hash="#webs">Diseño Web</button>
+                <button type="button" class="filter-btn active" role="tab" id="tab-3d" aria-selected="true" aria-controls="view-3d" data-view="3d" data-hash="#3d">Impresión 3D</button>
+                <button type="button" class="filter-btn" role="tab" id="tab-webs" aria-selected="false" aria-controls="webs" tabindex="-1" data-view="webs" data-hash="#webs">Diseño Web</button>
             </div>
         </nav>
     </header>
@@ -367,7 +367,8 @@
     <main>
     <div id="view-3d" class="site-view" role="tabpanel" aria-labelledby="tab-3d" aria-label="Impresión 3D">
     <!-- Hero Impresión 3D -->
-    <section id="inicio" class="hero hero-3d">
+    <section id="inicio" class="hero">
+        <div class="hero-background"></div>
         <div class="container hero-container">
             <div class="hero-content">
                 <span class="hero-eyebrow fade-in"><span class="eyebrow-dot"></span> Austral Prints 3D · Hualaihué</span>
@@ -379,17 +380,18 @@
                     </a>
                     <a href="#webs" class="btn btn-outline btn-lg">También hago webs</a>
                 </div>
-                <ul class="hero-proof fade-in delay-3" aria-label="Cómo imprimo">
+                <ul id="materiales" class="hero-proof fade-in delay-3" aria-label="Materiales e impresora">
                     <li><i class="fas fa-layer-group" aria-hidden="true"></i> PLA y PETG</li>
                     <li><i class="fas fa-print" aria-hidden="true"></i> Bambu Lab A1</li>
                     <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Hecho en Hualaihué</li>
                 </ul>
             </div>
-            <div class="print-mosaic fade-in delay-4" aria-hidden="true">
-                <div class="mosaic-tile t1"><i class="fas fa-key"></i><span>Llaveros</span></div>
-                <div class="mosaic-tile t2"><i class="fas fa-medal"></i><span>Medallas</span></div>
-                <div class="mosaic-tile t3"><i class="fas fa-shield-halved"></i><span>Canilleras</span></div>
-                <div class="mosaic-tile t4"><i class="fas fa-dove"></i><span>Fauna</span></div>
+            <div class="hero-mockup fade-in delay-4">
+                <div class="feature-card glass">
+                    <i class="fas fa-cubes" aria-hidden="true"></i>
+                    <h3>Catálogo abierto</h3>
+                    <p>Llaveros, figuras, merch y encargos a tu medida. Impresos en PLA y PETG con una Bambu Lab A1.</p>
+                </div>
             </div>
             <a href="#productos" class="hero-scroll" aria-label="Ver las piezas">
                 <span class="hero-scroll-line"></span>
@@ -398,229 +400,172 @@
         </div>
     </section>
 
-    <section id="materiales" class="materials" aria-label="Materiales e impresora">
-        <div class="container materials-row">
-            <p><i class="fas fa-layer-group" aria-hidden="true"></i> Materiales: <strong>PLA y PETG</strong></p>
-            <p><i class="fas fa-print" aria-hidden="true"></i> Impresora: <strong>Bambu Lab A1</strong></p>
-            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Hualaihué</strong>, Los Lagos</p>
-        </div>
-    </section>
-
-    <section id="productos" class="catalog">
+    <section id="productos" class="features">
         <div class="container">
             <div class="section-header">
                 <h2>Catálogo <span class="gradient-text">abierto</span></h2>
                 <p>Ejemplos de encargos que ya imprimí. Si te sirve uno igual, lo cotizamos. Si imaginas otra cosa, también lo hacemos. Las canilleras tienen precio publicado; el resto, a cotizar.</p>
             </div>
-            <div class="product-grid">
+            <div class="features-grid">
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-key"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-key" aria-hidden="true"></i>
                     <h3>Llaveros personalizados</h3>
                     <p>Con nombre, logo o la forma que necesites. Para regalos, equipos y negocios.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20llaveros%20personalizados" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Llaveros personalizados por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-certificate"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
                     <h3>Pins</h3>
                     <p>Pins para chaquetas, mochilas, ferias o eventos. El diseño lo armamos juntos.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20pins" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Pins por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-cube"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-cube" aria-hidden="true"></i>
                     <h3>Figuras 3D</h3>
                     <p>Figuras y miniaturas impresas desde tu idea o un modelo que me envíes.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20figuras%203D" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Figuras 3D por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-gift"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-gift" aria-hidden="true"></i>
                     <h3>Souvenirs</h3>
                     <p>Recuerdos del sur para turistas, ferias y locales de Hualaihué.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20souvenirs" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Souvenirs por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-medal"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-medal" aria-hidden="true"></i>
                     <h3>Medallas y trofeos</h3>
                     <p>Medallas y trofeos para campeonatos, colegios y clubes.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20medallas%20y%20trofeos" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Medallas y trofeos por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass has-price">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-shield-halved"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-shield-halved" aria-hidden="true"></i>
                     <h3>Canilleras de fútbol personalizadas</h3>
                     <p>Canilleras impresas en 3D con el nombre o el diseño de tu equipo.</p>
-                    <p class="product-price">CLP 10.000–12.000</p>
+                    <p><strong>CLP 10.000–12.000</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20canilleras%20de%20f%C3%BAtbol%20personalizadas" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Canilleras de fútbol personalizadas por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-lightbulb"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
                     <h3>Cuadro iluminado CR7</h3>
                     <p>Marco iluminado con motivo de CR7. Una pieza de exhibición para fanáticos.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20el%20cuadro%20iluminado%20CR7" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Cuadro iluminado CR7 por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass is-linked">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-qrcode"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
-                    <h3><a class="card-cover" href="https://multibus.cl" target="_blank" rel="noopener noreferrer">Multibus <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></h3>
-                    <p>Tablas de multiplicar impresas en 3D. En el reverso, un código QR abre multibus.cl para practicar.</p>
-                    <p class="product-price">A cotizar</p>
+                <article class="feature-card glass is-linked">
+                    <i class="fas fa-qrcode" aria-hidden="true"></i>
+                    <h3><a class="card-cover" href="https://multiboostlite.cl" target="_blank" rel="noopener noreferrer">Multibus <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></h3>
+                    <p>Tablas de multiplicar impresas en 3D. En el reverso, un código QR abre multiboostlite.cl para practicar.</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20Multibus" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Multibus por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-utensils"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
                     <h3>Fundas para cuchillos</h3>
                     <p>Fundas a medida para cuchillos de cocina o de trabajo, según la hoja.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20fundas%20para%20cuchillos" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Fundas para cuchillos por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-leaf"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-leaf" aria-hidden="true"></i>
                     <h3>Piezas de diseño</h3>
                     <p>Objetos de autor. Por ejemplo, un macetero en forma de tronco con un ave.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20piezas%20de%20dise%C3%B1o" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Piezas de diseño por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
 
-                <article class="product-card glass">
-                    <!-- Placeholder: reemplazar .product-ph por una foto cuando exista -->
-                    <div class="product-ph" aria-hidden="true">
-                        <i class="fas fa-store"></i>
-                        <span class="ph-note">Foto próximamente</span>
-                    </div>
+                <article class="feature-card glass">
+                    <i class="fas fa-store" aria-hidden="true"></i>
                     <h3>Merchandising para negocios y clubes</h3>
                     <p>Piezas con la identidad de tu local o club. Por ejemplo, llaveros con forma de tabla SUP o llaveros para clubes de fútbol.</p>
-                    <p class="product-price">A cotizar</p>
+                    <p><strong>A cotizar</strong></p>
                     <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20merchandising%20para%20negocios%20y%20clubes" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Merchandising para negocios y clubes por WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp
                     </a>
                 </article>
             </div>
-            <aside class="custom-order glass">
-                <div>
-                    <h2>¿Tienes una idea? Lo diseñamos e imprimimos a tu medida</h2>
-                    <p>El catálogo es una muestra, no un límite. Cuéntame la pieza que imaginas y la armamos desde cero.</p>
-                </div>
+        </div>
+    </section>
+
+    <section class="features" aria-label="Encargo personalizado">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Tienes una idea? Lo diseñamos e imprimimos a tu medida</h2>
+                <p>El catálogo es una muestra, no un límite. Cuéntame la pieza que imaginas y la armamos desde cero.</p>
                 <a class="btn btn-primary btn-lg" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20pedir%20un%20encargo%20personalizado" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i> Pide tu encargo personalizado
                 </a>
-            </aside>
+            </div>
         </div>
     </section>
 
-    <section id="kit-fauna" class="kit-section">
+    <section id="kit-fauna" class="pricing">
         <div class="container">
-            <article class="kit-card glass">
-                <div class="product-ph kit-ph" aria-hidden="true">
-                    <i class="fas fa-palette"></i>
-                    <span class="ph-note">Foto próximamente</span>
-                </div>
-                <div class="kit-copy">
-                    <p class="kit-kicker"><span class="soon-badge">Próximamente</span> Kit destacado</p>
-                    <h2>Kit Pinta tu Fauna Austral</h2>
-                    <p>Un kit para pintar y aprender sobre animales nativos de Chile. La figura llega impresa en 3D, sin pintar. Tú le pones el color.</p>
-                    <ul class="kit-includes">
-                        <li><i class="fas fa-check" aria-hidden="true"></i> <span>Figura de un animal nativo chileno, impresa en 3D y sin pintar</span></li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> <span>Pinturas acrílicas en los colores del animal</span></li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> <span>Folleto educativo con guía de pintura</span></li>
-                    </ul>
-                    <ul class="species" aria-label="Especies del kit">
-                        <li>7 especies</li>
-                        <li>Martín Pescador Grande</li>
-                        <li>Gato Güiña</li>
-                    </ul>
-                    <p>Pensado para niños, familias, escuelas y turistas: pintar, leer y llevarse un pedazo del sur.</p>
-                    <div class="kit-actions">
-                        <p class="product-price">A cotizar</p>
-                        <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20el%20Kit%20Pinta%20tu%20Fauna%20Austral" target="_blank" rel="noopener noreferrer" aria-label="Cotizar el Kit Pinta tu Fauna Austral por WhatsApp">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar el kit por WhatsApp
-                        </a>
+            <div class="section-header">
+                <h2>Kit <span class="gradient-text">Pinta tu Fauna Austral</span></h2>
+                <p>Próximamente. Figura sin pintar, pinturas acrílicas y un folleto para aprender. Para niños, familias, escuelas y turistas.</p>
+            </div>
+            <div class="pricing-grid">
+                <article class="pricing-card glass featured">
+                    <div class="badge">Próximamente</div>
+                    <div class="card-header">
+                        <h3>Kit destacado</h3>
+                        <div class="price">A cotizar</div>
                     </div>
-                </div>
-            </article>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Figura de un animal nativo chileno, impresa en 3D y sin pintar</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Pinturas acrílicas en los colores del animal</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Folleto educativo con guía de pintura</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 7 especies, por ejemplo Martín Pescador Grande y Gato Güiña</li>
+                    </ul>
+                    <a class="btn btn-primary" href="https://wa.me/56922050705?text=Hola%20Austral%20Prints%203D%2C%20quiero%20cotizar%20el%20Kit%20Pinta%20tu%20Fauna%20Austral" target="_blank" rel="noopener noreferrer" aria-label="Cotizar el Kit Pinta tu Fauna Austral por WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar el kit por WhatsApp
+                    </a>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="also-webs" aria-label="Diseño web">
+    <section class="features" aria-label="Diseño web">
         <div class="container">
-            <div class="also-webs-band glass">
-                <div>
-                    <h2>También hago webs</h2>
-                    <p>Landings, apps de gestión y sitios listos para funcionar, además de la impresión 3D.</p>
-                </div>
-                <a href="#webs" class="btn btn-outline">También hago webs</a>
+            <div class="section-header">
+                <h2>También hago webs</h2>
+                <p>Landings, apps de gestión y sitios listos para funcionar, además de la impresión 3D.</p>
+                <a href="#webs" class="btn btn-outline btn-lg">También hago webs</a>
             </div>
         </div>
     </section>

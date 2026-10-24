@@ -4,8 +4,8 @@
     "description": "Impresión 3D personalizada en Hualaihué: merch, kits y piezas a pedido. También diseño web en Chile.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#1a1c1f",
-    "theme_color": "#1a1c1f",
+    "background_color": "#0a0b10",
+    "theme_color": "#0a0b10",
     "lang": "es-CL",
     "icons": [
         {

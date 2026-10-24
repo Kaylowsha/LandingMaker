@@ -270,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-view]').forEach(el => {
             const on = el.dataset.view === view;
             el.classList.toggle('is-active', on);
+            if (el.classList.contains('filter-btn')) el.classList.toggle('active', on);
             if (el.getAttribute('role') === 'tab') {
                 el.setAttribute('aria-selected', on ? 'true' : 'false');
                 el.tabIndex = on ? 0 : -1;
